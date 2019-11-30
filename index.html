@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mockup</title>
+        <link rel="stylesheet" href="./window.css">
+        <link rel="stylesheet" href="./controls.css">
+        <link rel="stylesheet" href="./setup.css">
+
+        <link rel="shortcut icon" type="image/png" href="icon.png">
+    </head>
+    <body>
+
+        <div class="windowframe center" style="width: 600px; height: 540px;">
+            <!-- Basic title bar --> 
+            <div class="titlebar">
+                <div class="windowcontrols">
+                    <span class="dot red"></span>
+                    <span class="dot orange"></span>
+                    <span class="dot green"></span>
+                </div>
+
+                <p class="label windowtitle centerv">ScreenBreak - Setup</p>
+            </div>
+
+            <!-- Window content -->
+            <div class="content">
+
+                <div class="header">
+                    <img class="logo shadow" src="./icon.svg">
+                    <p class="label big title">
+                        Willkommen!
+                    </p>
+                    <p class="label medium" style="padding-right: 10px;">
+                        Dies scheint Ihre erste Verwendung des Programms zu sein.
+                        Sie haben nun die möglichkeit ScreenBreak einzurichten oder
+                        die Standartwerte zu verwenden.
+                    </p>
+                </div>
+
+                <!-- Selection -->
+                <div class="selection"> 
+                    <p class="label medium option">Wie möchten Sie ScreenBreak verwenden?</p>
+                    
+                    <div class="centerv">
+                        <button id="office" class="button">
+                            <img class="buttonIcon" src="./office2.svg">
+                            <p class="label medium ">Im Büro</p>
+                        </button> 
+                        
+                        <button id="home" class="button">
+                            <img class="buttonIcon " src="./home.svg">
+                            <p class="label medium">Zuhause</p>
+                        </button> 
+                    </div>
+                </div>
+                
+                <!-- Skip button -->
+                <div class="buttonbox">
+                    <button id="skip" class="button">
+                            <p class="label">Überspringen</p>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

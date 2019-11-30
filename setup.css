@@ -1,0 +1,37 @@
+.header {
+    margin: 10px;
+}
+
+.logo {
+    width: 180px;
+    float: left;
+}
+
+.title {
+    margin-top: 30px;
+}
+
+.selection {
+    margin-top: 90px;
+    display: block;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.option {
+    padding: 10px 0px;
+}
+
+.buttonIcon {
+    width: 64px;
+    padding: 10px;
+}
+
+#home, #office {
+    display: inline;
+    margin: 10px;
+}
+
+.selection > p {
+    text-align: center;
+}

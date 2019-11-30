@@ -1,0 +1,68 @@
+body {
+    background-color: #464545;
+}
+
+/* True drop shadow for pngs */
+.shadow, .button {
+  -webkit-filter: drop-shadow(0px 0px 5px #292828bb);
+  filter: drop-shadow(0px 0px 5px #292828bb);
+}
+
+.windowframe {
+    border-radius: 3px;
+    background: #393b3d;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #6c6d7188 #6c6d7188 #51515588 #6c6d7188;
+    box-shadow: 0px 0px 9px 9px #29282888;
+}
+
+.dot {
+    height: 14px;
+    width: 14px;
+    background-color: #bbb;
+    border-radius: 50%;
+    margin-right: 3px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+
+.red {
+    background-color: #ec514d;
+}
+
+.orange {
+    background-color: #f8bf35;
+}
+
+.green {
+    background-color: #63cd44;
+}
+
+.windowcontrols {
+    margin: 8px;
+    float: left;
+}
+.titlebar {
+    display: inline;
+    padding: 8px;
+}
+
+.windowtitle {
+    margin-top: 8px;
+    text-align: center;
+}
+
+.centerv {
+    left: 50%;
+    transform: translate3d(-50%, 0, 0);
+    position: absolute;
+}
+
+.center {
+    top:50%;
+    left: 50%;
+    transform: translate3d(-50%,-50%, 0);
+    position: absolute;
+}
