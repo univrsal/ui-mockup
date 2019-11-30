@@ -1,0 +1,109 @@
+p {
+    margin: 0px;
+}
+
+.label,
+.button {
+    color: white;
+    font-family: "Arial", Times, serif;
+    font-size: 11pt;
+}
+
+.label {
+    cursor: default;
+}
+
+.button>.label {
+    cursor: pointer;
+}
+
+.button {
+    padding: 5px 10px 5px 10px;
+    border-radius: 3px;
+    background: #6c6d71;
+    cursor: pointer;
+    border-style: solid none none none;
+    border-color: #ffffff33 white black white;
+    border-width: 1px;
+    transition: background 0.5s;
+}
+
+.button:hover {
+    background: #8c8d91;
+}
+
+.big {
+    font-size: 24pt;
+    font-weight: bold;
+    margin: 5px;
+}
+
+.medium {
+    font-size: 13pt;
+}
+
+.buttonbox {
+    position: absolute;
+    right: 15px;
+}
+
+.fadeOut {
+    animation-name: fadeOut;
+    animation-duration: 0.5s;
+}
+
+.fadeIn {
+    animation-name: fadeIn;
+    animation-duration: 0.5s;
+}
+
+@keyframes fadeOut {
+    0% {
+        filter: opacity(100%);
+    }
+    100% {
+        filter: opacity(0%);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        filter: opacity(0%);
+    }
+    100% {
+        filter: opacity(100%);
+    }
+}
+
+.page {
+    position: relative;
+}
+
+.fullLabel {
+    padding-top: 15px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.buttonList>.button {
+    display: inline;
+    margin: 10px;
+}
+
+.listCenter {
+    text-align: center;
+}
+
+.buttonList {
+    display: inline-block;
+}
+
+.buttonIcon {
+    width: 64px;
+    padding: 10px;
+}
+
+.buttonIconSmall {
+    width: 64px;
+    padding: 10px;
+}

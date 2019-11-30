@@ -1,66 +1,177 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Mockup</title>
-        <link rel="stylesheet" href="./window.css">
-        <link rel="stylesheet" href="./controls.css">
-        <link rel="stylesheet" href="./setup.css">
 
-        <link rel="shortcut icon" type="image/png" href="icon.png">
-    </head>
-    <body>
+<head>
+    <title>Mockup</title>
+    <link rel="stylesheet" href="./css/window.css">
+    <link rel="stylesheet" href="./css/controls.css">
+    <link rel="stylesheet" href="./css/setup.css">
+    <link rel="stylesheet" href="./css/popup.css">
 
-        <div class="windowframe center" style="width: 600px; height: 540px;">
-            <!-- Basic title bar --> 
-            <div class="titlebar">
-                <div class="windowcontrols">
-                    <span class="dot red"></span>
-                    <span class="dot orange"></span>
-                    <span class="dot green"></span>
-                </div>
 
-                <p class="label windowtitle centerv">ScreenBreak - Setup</p>
+    <link rel="shortcut icon" type="image/png" href="img/icon.png">
+</head>
+
+<body>
+    <div id="bg-image"></div>
+
+    <div id="main" class="windowframe center" style="width: 600px; height: 540px;">
+        <!-- Basic title bar -->
+        <div class="titlebar">
+            <div class="windowcontrols">
+                <span class="dot red"></span>
+                <span class="dot orange"></span>
+                <span class="dot green"></span>
             </div>
 
-            <!-- Window content -->
-            <div class="content">
+            <p class="label windowtitle centerv">ScreenBreak - Setup</p>
+        </div>
+
+        <!-- Window content -->
+        <div class="pages">
+            <div class="page" id="page1">
 
                 <div class="header">
-                    <img class="logo shadow" src="./icon.svg">
+                    <img class="logo shadow" src="./img/icon.svg">
                     <p class="label big title">
                         Willkommen!
                     </p>
                     <p class="label medium" style="padding-right: 10px;">
-                        Dies scheint Ihre erste Verwendung des Programms zu sein.
-                        Sie haben nun die möglichkeit ScreenBreak einzurichten oder
-                        die Standartwerte zu verwenden.
+                        Dies scheint Ihre erste Verwendung des Programms zu sein. Sie haben nun die möglichkeit ScreenBreak einzurichten oder die Standartwerte zu verwenden.
                     </p>
                 </div>
 
                 <!-- Selection -->
-                <div class="selection"> 
+                <div class="selection">
                     <p class="label medium option">Wie möchten Sie ScreenBreak verwenden?</p>
-                    
-                    <div class="centerv">
-                        <button id="office" class="button">
-                            <img class="buttonIcon" src="./office2.svg">
-                            <p class="label medium ">Im Büro</p>
-                        </button> 
-                        
-                        <button id="home" class="button">
-                            <img class="buttonIcon " src="./home.svg">
-                            <p class="label medium">Zuhause</p>
-                        </button> 
+
+                    <div class="listCenter">
+                        <div class="buttonList">
+                            <button id="office" class="button" onClick="goto_page('page1', 'page2')">
+                                        <img class="buttonIcon" src="./img/office2.svg">
+                                        <p class="label medium ">Im Büro</p>
+                                    </button>
+
+                            <button id="home" class="button" onClick="goto_page('page1', 'page3')">
+                                        <img class="buttonIcon " src="./img/home.svg">
+                                        <p class="label medium">Zuhause</p>
+                                    </button>
+                        </div>
                     </div>
                 </div>
-                
+
                 <!-- Skip button -->
-                <div class="buttonbox">
+                <div class="buttonbox" style="bottom: -81px;">
                     <button id="skip" class="button">
                             <p class="label">Überspringen</p>
-                    </button>
+                        </button>
+                </div>
+            </div>
+
+            <!-- Group info page -->
+            <div class="page" id="page2" style="display: none;">
+                <div class="header">
+                    <p class="label big title">
+                        Gruppeneinrichtung
+                    </p>
+                    <p class="label medium fullLabel">
+                        ScreenBreak gibt Ihnen die Möglichkeit sich mit Arbeitskollegen in Gruppen zu finden, um Pausen abzustimmen.<br> <br> Falls Sie diese Option nutzen möchten, können Sie jetzt einer Gruppe beitreten oder eine neue erstellen. Diese
+                        Option steht auch später in den Einstellungen zur Verfügung.
+                    </p>
+                </div>
+
+                <!-- Selection -->
+                <div class="selection">
+                    <div class="listCenter">
+                        <div class="buttonList">
+                            <button id="add" class="button" onClick="open_dialog('makeGroupDialog')">
+                                    <img class="buttonIcon" src="./img/plus.svg">
+                                    <p class="label medium ">Erstellen</p>
+                                </button>
+
+                            <button id="join" class="button">
+                                    <img class="buttonIcon " src="./img/door.svg">
+                                    <p class="label medium">Beitreten</p>
+                                </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skip button -->
+                <div class="buttonbox" style="bottom: -65px;">
+                    <button id="back" class="button" onClick="goto_page('page2', 'page1')">
+                            <p class="label">Zurück</p>
+                        </button>
+                    <button id="skip2" class="button" onClick="goto_page('page2', 'page3')">
+                                <p class="label">Überspringen</p>
+                        </button>
+                </div>
+            </div>
+
+            <!-- Services -->
+            <div class="page" id="page3" style="display: none;">
+                <div class="header">
+                    <!-- <img class="logo shadow" src="./icon.svg"> -->
+                    <p class="label big title">
+                        Diensteintegration
+                    </p>
+                    <p class="label medium fullLabel">
+                        Um Ihnen passende Erinnerungen in den Pausen zu geben, hat ScreenBreak die Möglichkeit diese aus anderen Diensten zu importieren. <br><br> Sie können sich jetzt oder Später in den Einstellungen direkt in unterstützte Dienste einloggen.
+                    </p>
+                </div>
+
+                <!-- Selection -->
+                <div class="selection">
+                    <div class="listCenter">
+                        <div class="buttonList">
+                            <button id="ms" class="button" onClick="">
+                                    <img class="buttonIconSmall" src="./img/ms.svg">
+                                    <p class="label medium ">Microsoft</p>
+                                </button>
+
+                            <button id="google" class="button">
+                                    <img class="buttonIconSmall" src="./img/g.svg">
+                                    <p class="label medium">Google</p>
+                                </button>
+
+                            <button id="nc" class="button">
+                                    <img class="buttonIconSmall" src="./img/nc.svg">
+                                    <p class="label medium">NextCloud</p>
+                                </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skip button -->
+                <div class="buttonbox" style="bottom: -85px;">
+                    <button id="back2" class="button" onClick="goto_page('page3', 'page2')">
+                            <p class="label">Zurück</p>
+                        </button>
+                    <button id="skip3" class="button">
+                                <p class="label">Überspringen</p>
+                        </button>
                 </div>
             </div>
         </div>
-    </body>
+    </div>
+
+    <!-- Popups -->
+
+    <!-- Make group -->
+    <div id="makeGroupDialog" class="modal-window">
+        <div>
+            <div class="titlebar">
+                <div class="windowcontrols" onClick="close_dialog('makeGroupDialog')">
+                    <span class="dot red"></span>
+                </div>
+
+                <p class="label windowtitle centerv">Neue Gruppe</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Join group -->
+    <script src="./js/setup.js"></script>
+</body>
+
 </html>

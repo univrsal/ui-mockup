@@ -1,0 +1,27 @@
+.header {
+    margin: 10px;
+}
+
+.logo {
+    width: 180px;
+    float: left;
+}
+
+.title {
+    margin-top: 30px;
+}
+
+.selection {
+    margin-top: 90px;
+    display: block;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.option {
+    padding: 10px 0px;
+}
+
+.selection>p {
+    text-align: center;
+}
