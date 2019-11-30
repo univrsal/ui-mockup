@@ -89,7 +89,7 @@
                                     <p class="label medium ">Erstellen</p>
                                 </button>
 
-                            <button id="join" class="button">
+                            <button id="join" class="button" onClick="open_dialog('joinGroupDialog')">
                                     <img class="buttonIcon " src="./img/door.svg">
                                     <p class="label medium">Beitreten</p>
                                 </button>
@@ -98,7 +98,7 @@
                 </div>
 
                 <!-- Skip button -->
-                <div class="buttonbox" style="bottom: -65px;">
+                <div class="buttonbox" style="bottom: -80px;">
                     <button id="back" class="button" onClick="goto_page('page2', 'page1')">
                             <p class="label">Zurück</p>
                         </button>
@@ -143,13 +143,13 @@
                 </div>
 
                 <!-- Skip button -->
-                <div class="buttonbox" style="bottom: -85px;">
+                <div class="buttonbox" style="bottom: -98px;">
                     <button id="back2" class="button" onClick="goto_page('page3', 'page2')">
                             <p class="label">Zurück</p>
-                        </button>
+                    </button>
                     <button id="skip3" class="button">
                                 <p class="label">Überspringen</p>
-                        </button>
+                    </button>
                 </div>
             </div>
         </div>
@@ -167,10 +167,33 @@
 
                 <p class="label windowtitle centerv">Neue Gruppe</p>
             </div>
+
+            <div class="spacer"></div>
+            <input type="text" class="fullInput" placeholder="Gruppenname">
+            <div class="spacer-small"></div>
+            <p class="label fullLabel">Teilnehmer</p>
+
         </div>
     </div>
 
     <!-- Join group -->
+    <div id="joinGroupDialog" class="modal-window">
+        <div>
+            <div class="titlebar">
+                <div class="windowcontrols" onClick="close_dialog('joinGroupDialog')">
+                    <span class="dot red"></span>
+                </div>
+
+                <p class="label windowtitle centerv">Gruppe beitreten</p>
+            </div>
+
+            <div class="spacer"></div>
+            <input type="text" class="fullInput" placeholder="Gruppenname">
+            <div class="table">
+
+            </div>
+        </div>
+    </div>
     <script src="./js/setup.js"></script>
 </body>
 
