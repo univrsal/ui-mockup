@@ -34,7 +34,13 @@ function back()
 {
     if (cur_page <= 1)
         return;
-    var new_page = pre_page;
+    /* Only go to previous page if it's actually the previous one
+       otherwise just decrease page number by one. This prevents the back
+       button from going forward if the user goes back from the last page
+       because then previous page will contain the last page and consquentially
+       will use that when going back.
+    */
+    var new_page = cur_page < pre_page ? cur_page - 1 : pre_page;
 
     if (new_page > 0)
         goto_page(new_page);
@@ -90,9 +96,12 @@ function goto_page(t)
     setTimeout(exchange, 500, prev, next);
 }
 
-function open_dialog(id)
+function open_dialog(id, title)
 {
     var d = document.getElementById(id);
+    if (title !== undefined ) {
+         document.getElementById('serviceTitle').textContent = 'Mit ' + title + ' Konto einloggen';
+    }
 
     if (d !== null) {
         d.style.opacity = 1;
@@ -103,10 +112,11 @@ function open_dialog(id)
     }
 }
 
-function close_dialog(id)
+function close_dialog(id, handler)
 {
     var d = document.getElementById(id);
-
+    if (handler !== undefined)
+        handler();
     if (d !== null) {
         d.style.opacity = 0;
         d.style.pointerEvents = 'none';
@@ -114,6 +124,17 @@ function close_dialog(id)
         main.classList.remove('blurred');
         bg.classList.remove('blurred');
     }
+}
+
+function handle_join()
+{
+    document.getElementById('joinGroupText').value = '';
+}
+
+function handle_create()
+{
+    document.getElementById('newGroupText').value = '';
+    document.getElementById('addMemberText').value = '';
 }
 
 function clear_select()
@@ -135,6 +156,7 @@ var main_pos = { "x" : 0, "y": 0 };
 
 function start_drag(event)
 {
+    clear_select();
     dragging = true;
     main.style.pointerEvents = 'none';
 }

@@ -15,10 +15,6 @@
     pointer-events: none;
 }
 
-.title {
-    margin-top: 30px;
-}
-
 .selection {
     margin-top: 90px;
     display: block;
@@ -32,4 +28,19 @@
 
 .selection > p {
     text-align: center;
+}
+
+#makeGroupDialog > div{
+    width: 400px;
+    height: 400px;
+}
+
+#joinGroupDialog > div{
+    width: 250px;
+    height: 100px;
+}
+
+#serviceLoginDialog > div{
+    width: 390px;
+    height: 210px;
 }

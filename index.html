@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="./css/window.css">
     <link rel="stylesheet" href="./css/controls.css">
     <link rel="stylesheet" href="./css/setup.css">
+    <link rel="stylesheet" href="./css/extra.css">
     <link rel="stylesheet" href="./css/popup.css">
 
 
@@ -67,7 +68,7 @@
                     <p class="label big title">
                         Gruppeneinrichtung
                     </p>
-                    <p class="label medium fullLabel">
+                    <p class="label medium">
                         ScreenBreak gibt Ihnen die Möglichkeit sich mit Arbeitskollegen in Gruppen zu finden, um Pausen abzustimmen.<br> <br> Falls Sie diese Option nutzen möchten, können Sie jetzt einer Gruppe beitreten oder eine neue erstellen. Diese
                         Option steht auch später in den Einstellungen zur Verfügung.
                     </p>
@@ -98,7 +99,7 @@
                     <p class="label big title">
                         Diensteintegration
                     </p>
-                    <p class="label medium fullLabel">
+                    <p class="label medium">
                         Um Ihnen passende Erinnerungen in den Pausen zu geben, hat ScreenBreak die Möglichkeit diese aus anderen Diensten zu importieren. <br><br> Sie können sich jetzt oder Später in den Einstellungen direkt in unterstützte Dienste einloggen.
                     </p>
                 </div>
@@ -107,24 +108,53 @@
                 <div class="selection">
                     <div class="listCenter">
                         <div class="buttonList">
-                            <button id="ms" class="button" onClick="">
+                            <button id="ms" class="button" onClick="open_dialog('serviceLoginDialog', 'Microsoft')">
                                 <img class="buttonIconSmall" src="./img/ms.svg">
                                 <p class="label medium ">Microsoft</p>
                             </button>
 
-                            <button id="google" class="button">
+                            <button id="google" class="button" onClick="open_dialog('serviceLoginDialog', 'Google')">
                                 <img class="buttonIconSmall" src="./img/g.svg">
                                 <p class="label medium">Google</p>
                             </button>
 
-                            <button id="nc" class="button">
+                            <button id="nc" class="button" onClick="open_dialog('serviceLoginDialog', 'Nextcloud')">
                                 <img class="buttonIconSmall" src="./img/nc.svg">
-                                <p class="label medium">NextCloud</p>
+                                <p class="label medium">Nextcloud</p>
                             </button>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <!-- Finished -->
+            <div class="page" id="page4" style="display: none;">
+                    <div class="header">
+                        <!-- <img class="logo shadow" src="./icon.svg"> -->
+                        <p class="label big title">
+                            Geschafft!
+                        </p>
+                        <p class="label medium">
+                            ScreenBreak ist jetzt für die Verwendung bereit. Falls Sie Ihre getroffenen Einstellungen
+                            nochmal überarbeiten möchten, oder andere anpassen möchten, können Sie jetzt die Einstellungen öffnen.
+                            <br><br>
+                            Wenn Ihnen der Standardablauf ausreicht, können Sie jetzt das Programm starten. Sie werden dann in
+                            50 Minuten an eine zehn Minuten Pause erinnert.
+                        </p>
+                    </div>
+    
+                    <!-- Selection -->
+                    <div class="selection">
+                        <div class="listCenter">
+                            <div class="buttonList">
+                                <button id="ms" class="button">
+                                    <img class="buttonIconSmall" src="./img/timer.svg">
+                                    <p class="label medium ">ScreenBreak starten</p>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
         </div>
 
         <!-- Skip button -->
@@ -151,14 +181,40 @@
                 <div class="windowcontrols" onClick="close_dialog('makeGroupDialog')">
                     <span class="dot red"></span>
                 </div>
-
                 <p class="label windowtitle centerv">Neue Gruppe</p>
             </div>
 
             <div class="spacer"></div>
-            <input type="text" class="fullInput" placeholder="Gruppenname">
+            <input id="newGroupText" type="text" class="fullInput" placeholder="Gruppenname">
+            
             <div class="spacer-small"></div>
-            <p class="label fullLabel">Teilnehmer</p>
+            
+            <p class="label">Hinzufügen</p>
+            <div class="control-container">
+                <input id="addMemberText" type="text" class="cell" placeholder="Teilnehmer">
+                <button id="skip" class="button control-button" onClick="">
+                    <p class="label">+</p>
+                </button>
+            </div>
+            
+            <div class="spacer-small"></div>
+            
+            <p class="label">Teilnehmer</p>
+            <select size="6">
+                <option>Rainer Vansinn</option>
+                <option>Gabe Newell</option>
+            </select>
+            <div class="modify-box">
+                <button id="skip" class="button" onClick="">
+                    <p class="label">Entferne ausgewählten Teilnehmer</p>
+                </button>
+            </div>
+
+            <div class="buttonbox">
+                <button id="skip" class="button dialog-button" onClick="close_dialog('makeGroupDialog', handle_create)">
+                    <p class="label">OK</p>
+                </button>
+            </div>
         </div>
     </div>
 
@@ -174,9 +230,68 @@
             </div>
 
             <div class="spacer"></div>
-            <input type="text" class="fullInput" placeholder="Gruppenname">
-            <div class="table">
+            <input id="joinGroupText" type="text" class="fullInput" placeholder="Gruppenname">
+            <div class="buttonbox">
+                <button id="skip" class="button dialog-button" onClick="close_dialog('joinGroupDialog', handle_join)">
+                    <p class="label">OK</p>
+                </button>
+            </div>
+        </div>
+    </div>
 
+    <!-- Service integration -->
+    <div id="serviceLoginDialog" class="modal-window">
+        <div>
+            <div class="titlebar">
+                <div class="windowcontrols" onClick="close_dialog('serviceLoginDialog')">
+                    <span class="dot red"></span>
+                </div>
+
+                <p id="serviceTitle" class="label windowtitle centerv">aaaa</p>
+            </div>
+
+            <div class="spacer"></div>
+            <input id="serviceEmail" type="text" class="fullInput" placeholder="E-Mail Adresse">
+            <input id="servicePassword" type="password" class="fullInput" placeholder="Passwort">
+            
+            <div class="spacer"></div>
+            <p class="label">Importiere</p>
+            <div class="spacer-small"></div>
+            
+            <div class="multi-select">
+                <label for="cbk">
+                    <input type="checkbox" id="cbk">
+                    <span class="cbx">
+                        <svg width="12px" height="11px" viewBox="0 0 12 11">
+                            <polyline points="0.75 4.721 3.375 7.5 8.25 0.75"></polyline>
+                        </svg>
+                    </span>
+                    <span>Kontakte</span>
+                </label>
+                <label for="cbk2">
+                        <input type="checkbox" id="cbk2">
+                        <span class="cbx">
+                            <svg width="12px" height="11px" viewBox="0 0 12 11">
+                                <polyline points="0.75 4.721 3.375 7.5 8.25 0.75"></polyline>
+                            </svg>
+                        </span>
+                        <span>Notizen</span>
+                </label>
+                <label for="cbk3">
+                        <input type="checkbox" id="cbk3">
+                        <span class="cbx">
+                            <svg width="12px" height="11px" viewBox="0 0 12 11">
+                                <polyline points="0.75 4.721 3.375 7.5 8.25 0.75"></polyline>
+                            </svg>
+                        </span>
+                        <span>Termine</span>
+                </label>
+            </div>
+
+            <div class="buttonbox">
+                <button id="skip" class="button dialog-button" onClick="close_dialog('serviceLoginDialog', handle_join)">
+                    <p class="label">OK</p>
+                </button>
             </div>
         </div>
     </div>
