@@ -46,7 +46,16 @@ function handle_buttons()
     var back = document.getElementById('back');
     
     back.style.display = cur_page > 1 ? 'block' : 'none';
-    skip.textContent = cur_page >= 4 ? 'Fertigstellen' : 'Überspringen';
+    switch (cur_page) {
+        case pages.INTRO:
+            skip.textContent = 'Überspringen';
+            break;
+        case pages.END:
+            skip.textContent = 'Fertigstellen';
+            break;
+        default:
+            skip.textContent = 'Weiter';
+    }
 }
 
 function exchange(from, to)
