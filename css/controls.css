@@ -12,14 +12,12 @@ p {
 
 input[type=text] {
     padding: 5px 10px 5px 10px;
-    margin: 0px 10px 0px 10px;
     border-radius: 3px;
     background: #6c6d71;
     border-style: solid none none none;
     border-color: #ffffff33 white black white;
     border-width: 1px;
     color: white;
-    display: inline-block;
 }
 
 ::placeholder {
@@ -32,6 +30,11 @@ input[type=text] {
     color: white;
     font-family: "Arial", Times, serif;
     font-size: 11pt;
+}
+
+.dialog-button {
+    min-width: 110px;
+    margin-left: 5px;
 }
 
 .label {
@@ -69,7 +72,10 @@ input[type=text] {
 
 .buttonbox {
     position: absolute;
-    right: 15px;
+   
+    float: left;
+    bottom: 8px;
+    right: 8px;
 }
 
 .fadeOut {
@@ -100,8 +106,10 @@ input[type=text] {
     }
 }
 
-.page {
+.page, .pages {
     position: relative;
+    width: auto;
+    height: auto;
 }
 
 .fullLabel {
@@ -109,7 +117,7 @@ input[type=text] {
     padding-left: 10px;
 }
 
-.buttonList>.button {
+.buttonList > .button {
     display: inline;
     margin: 10px;
 }
@@ -133,5 +141,6 @@ input[type=text] {
 }
 
 .fullInput {
-    width: 90%;
+    width: 100%;
+    box-sizing: border-box;
 }

@@ -1,17 +1,70 @@
+var cur_page = 1;
+var pre_page = 1;
+
+var pages = {
+    INTRO: 1,
+    GROUPS: 2,
+    SERVICES: 3,
+    END: 4,
+};
+
+function skip() {
+    if (cur_page >= 4)
+        return;
+    var new_page = -1;
+
+    switch (cur_page) {
+        case pages.INTRO: /* skip entire setup */
+            new_page = pages.END;
+            break;
+        case pages.SERVICES:
+        case pages.GROUPS:
+            new_page = cur_page + 1;
+        default:;
+    }
+
+    if (new_page > 0)
+        goto_page(new_page);
+}
+
+function back() {
+    if (cur_page <= 1)
+        return;
+    var new_page = pre_page;
+
+    if (new_page > 0)
+        goto_page(new_page);
+}
+
+function handle_buttons() {
+    var skip = document.getElementById('skip');
+    var back = document.getElementById('back');
+    
+    back.style.display = cur_page > 1 ? 'block' : 'none';
+    skip.textContent = cur_page >= 4 ? 'Fertigstellen' : 'Überspringen';
+}
+
 function exchange(from, to) {
     if (from !== null) {
         from.style.display = 'none';
         from.classList.remove('fadeOut');
     }
-
-    to.style.display = 'block';
-    to.classList.add('fadeIn');
+    if (to !== null) {
+        to.style.display = 'block';
+        to.classList.add('fadeIn');
+    }
     setTimeout(function(what) {
         what.classList.remove('fadeIn');
     }, 500, to);
 }
 
-function goto_page(from, to) {
+function goto_page(t) {
+    pre_page = cur_page;
+    cur_page = t;
+    var to = 'page' + t;
+    var from = 'page' + pre_page;
+    handle_buttons();
+
     var next = document.getElementById(to);
     var prev = document.getElementById(from);
 

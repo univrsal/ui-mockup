@@ -47,24 +47,17 @@
 
                     <div class="listCenter">
                         <div class="buttonList">
-                            <button id="office" class="button" onClick="goto_page('page1', 'page2')">
-                                        <img class="buttonIcon" src="./img/office2.svg">
-                                        <p class="label medium ">Im Büro</p>
-                                    </button>
+                            <button id="office" class="button" onClick="goto_page(2)">
+                                <img class="buttonIcon" src="./img/office2.svg">
+                                <p class="label medium ">Im Büro</p>
+                            </button>
 
-                            <button id="home" class="button" onClick="goto_page('page1', 'page3')">
-                                        <img class="buttonIcon " src="./img/home.svg">
-                                        <p class="label medium">Zuhause</p>
-                                    </button>
+                            <button id="home" class="button" onClick="goto_page(3)">
+                                <img class="buttonIcon " src="./img/home.svg">
+                                <p class="label medium">Zuhause</p>
+                            </button>
                         </div>
                     </div>
-                </div>
-
-                <!-- Skip button -->
-                <div class="buttonbox" style="bottom: -81px;">
-                    <button id="skip" class="button">
-                            <p class="label">Überspringen</p>
-                        </button>
                 </div>
             </div>
 
@@ -85,26 +78,16 @@
                     <div class="listCenter">
                         <div class="buttonList">
                             <button id="add" class="button" onClick="open_dialog('makeGroupDialog')">
-                                    <img class="buttonIcon" src="./img/plus.svg">
-                                    <p class="label medium ">Erstellen</p>
-                                </button>
+                                <img class="buttonIcon" src="./img/plus.svg">
+                                <p class="label medium ">Erstellen</p>
+                            </button>
 
                             <button id="join" class="button" onClick="open_dialog('joinGroupDialog')">
-                                    <img class="buttonIcon " src="./img/door.svg">
-                                    <p class="label medium">Beitreten</p>
-                                </button>
+                                <img class="buttonIcon " src="./img/door.svg">
+                                <p class="label medium">Beitreten</p>
+                            </button>
                         </div>
                     </div>
-                </div>
-
-                <!-- Skip button -->
-                <div class="buttonbox" style="bottom: -80px;">
-                    <button id="back" class="button" onClick="goto_page('page2', 'page1')">
-                            <p class="label">Zurück</p>
-                        </button>
-                    <button id="skip2" class="button" onClick="goto_page('page2', 'page3')">
-                                <p class="label">Überspringen</p>
-                        </button>
                 </div>
             </div>
 
@@ -141,17 +124,17 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Skip button -->
-                <div class="buttonbox" style="bottom: -98px;">
-                    <button id="back2" class="button" onClick="goto_page('page3', 'page2')">
-                            <p class="label">Zurück</p>
-                    </button>
-                    <button id="skip3" class="button">
-                                <p class="label">Überspringen</p>
-                    </button>
-                </div>
             </div>
+        </div>
+
+        <!-- Skip button -->
+        <div class="buttonbox">
+            <button id="back" class="button dialog-button" style="display: none;" onClick="back()">
+                <p class="label">Zurück</p>
+            </button>
+            <button id="skip" class="button dialog-button" onClick="skip()">
+            <p class="label">Überspringen</p>
+            </button>
         </div>
     </div>
 
