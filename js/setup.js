@@ -1,5 +1,7 @@
 var cur_page = 1;
 var pre_page = 1;
+var main = document.getElementById('main');
+var bg = document.getElementById('bg-image');
 
 var pages = {
     INTRO: 1,
@@ -8,7 +10,8 @@ var pages = {
     END: 4,
 };
 
-function skip() {
+function skip()
+{
     if (cur_page >= 4)
         return;
     var new_page = -1;
@@ -27,7 +30,8 @@ function skip() {
         goto_page(new_page);
 }
 
-function back() {
+function back()
+{
     if (cur_page <= 1)
         return;
     var new_page = pre_page;
@@ -36,7 +40,8 @@ function back() {
         goto_page(new_page);
 }
 
-function handle_buttons() {
+function handle_buttons()
+{
     var skip = document.getElementById('skip');
     var back = document.getElementById('back');
     
@@ -44,7 +49,8 @@ function handle_buttons() {
     skip.textContent = cur_page >= 4 ? 'Fertigstellen' : 'Überspringen';
 }
 
-function exchange(from, to) {
+function exchange(from, to)
+{
     if (from !== null) {
         from.style.display = 'none';
         from.classList.remove('fadeOut');
@@ -58,7 +64,9 @@ function exchange(from, to) {
     }, 500, to);
 }
 
-function goto_page(t) {
+function goto_page(t)
+{
+    clear_select();
     pre_page = cur_page;
     cur_page = t;
     var to = 'page' + t;
@@ -73,30 +81,71 @@ function goto_page(t) {
     setTimeout(exchange, 500, prev, next);
 }
 
-function open_dialog(id) {
+function open_dialog(id)
+{
     var d = document.getElementById(id);
-    var m = document.getElementById('main');
-    var i = document.getElementById('bg-image');
 
     if (d !== null) {
         d.style.opacity = 1;
         d.style.pointerEvents = 'all';
-        m.style.pointerEvents = 'none';
-        m.classList.add('blurred');
-        i.classList.add('blurred');
+        main.style.pointerEvents = 'none';
+        main.classList.add('blurred');
+        bg.classList.add('blurred');
     }
 }
 
-function close_dialog(id) {
+function close_dialog(id)
+{
     var d = document.getElementById(id);
-    var m = document.getElementById('main');
-    var i = document.getElementById('bg-image');
 
     if (d !== null) {
         d.style.opacity = 0;
         d.style.pointerEvents = 'none';
-        m.style.pointerEvents = 'all';
-        m.classList.remove('blurred');
-        i.classList.remove('blurred');
+        main.style.pointerEvents = 'all';
+        main.classList.remove('blurred');
+        bg.classList.remove('blurred');
+    }
+}
+
+function clear_select()
+{
+    if (window.getSelection) {
+        if (window.getSelection().empty) { 
+             window.getSelection().empty();
+        } else if (window.getSelection().removeAllRanges) {
+            window.getSelection().removeAllRanges();
+        }
+    } else if (document.selection) {
+        document.selection.empty();
+    }
+}
+
+/* Resizing */
+var dragging = false;
+var main_pos = { "x" : 0, "y": 0 };
+
+function start_drag(event)
+{
+    dragging = true;
+    main.style.pointerEvents = 'none';
+}
+
+function stop_drag(event)
+{
+    dragging = false;
+    main.style.pointerEvents = 'all';
+}
+var setup = document.getElementsByClassName('setup')[0];
+
+function drag(event)
+{
+    if (dragging) {
+        var r = main.getBoundingClientRect();
+        main_pos.x = r.left;
+        main_pos.y = r.top;
+        var w = event.pageX - 15 - main_pos.x;
+        var h = event.pageY - 15 - main_pos.y;
+        setup.style.width = w + 'px';
+        setup.style.height = h + 'px';
     }
 }

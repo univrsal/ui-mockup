@@ -56,6 +56,18 @@ html {
     transition: background-color 0.5s;
 }
 
+#resize {
+    width: 10px;
+    height: 10px;
+    background-color: transparent;
+    float: right;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    cursor: nwse-resize;
+    z-index: -1;
+}
+
 .red:hover {
     background-color: #ff6961;
 }

@@ -12,13 +12,13 @@
     <link rel="shortcut icon" type="image/png" href="img/icon.png">
 </head>
 
-<body>
+<body onmouseup="stop_drag(event)" onmousemove="drag(event)">
     <div id="bg-image"></div>
 
-    <div id="main" class="windowframe center" style="width: 600px; height: 540px;">
+    <div id="main" class="windowframe center setup">
         <!-- Basic title bar -->
         <div class="titlebar">
-            <div class="windowcontrols">
+            <div class="windowcontrols noselect">
                 <span class="dot red"></span>
                 <span class="dot orange"></span>
                 <span class="dot green"></span>
@@ -32,7 +32,7 @@
             <div class="page" id="page1">
 
                 <div class="header">
-                    <img class="logo shadow" src="./img/icon.svg">
+                    <img class="logo shadow noselect" src="./img/icon.svg">
                     <p class="label big title">
                         Willkommen!
                     </p>
@@ -137,6 +137,9 @@
                 <p class="label">Zurück</p>
             </button>
         </div>
+        
+        <!-- Resize Corner -->
+        <div id="resize" onmousedown="start_drag(event)"></div>
     </div>
 
     <!-- Popups -->
@@ -156,7 +159,6 @@
             <input type="text" class="fullInput" placeholder="Gruppenname">
             <div class="spacer-small"></div>
             <p class="label fullLabel">Teilnehmer</p>
-
         </div>
     </div>
 
