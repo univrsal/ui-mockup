@@ -30,6 +30,7 @@ html {
 }
 
 .windowframe {
+    overflow: hidden;
     padding: 8px;
     border-radius: 6px;
     background: #393b3d;

@@ -27,25 +27,42 @@
             <p class="label windowtitle centerv">ScreenBreak - Einstellungen</p>
         </div>
         
-        <!-- Window content -->
+        <!-- Window tab bar -->
         <div class="tab-bar spacer-small">
-            <button id="tab1" class="tab-button tab-button-left tab-button-pressed" onClick="select_tab(event)">
+            <button id="tab-button1" class="tab-button tab-button-left tab-button-pressed" onClick="select_tab(event, 1)">
                 Allgemein
             </button>
-            <button id="tab2" class="tab-button tab-button-middle" onClick="select_tab(event)">
+            <button id="tab-button2" class="tab-button tab-button-middle" onClick="select_tab(event, 2)">
                 Gruppen
             </button>
-            <button id="tab3" class="tab-button tab-button-middle" onClick="select_tab(event)">
+            <button id="tab-button3" class="tab-button tab-button-middle" onClick="select_tab(event, 3)">
                 Pausen
             </button>
-            <button id="tab4" class="tab-button tab-button-middle" onClick="select_tab(event)">
+            <button id="tab-button4" class="tab-button tab-button-middle" onClick="select_tab(event, 4)">
                 Integration
             </button>
-            <button id="tab5" class="tab-button tab-button-right" onClick="select_tab(event)">
+            <button id="tab-button5" class="tab-button tab-button-right" onClick="select_tab(event, 5)">
                 Impressum
             </button>
         </div>
-          
+        <div style="height: 50px;"></div> <!-- Tab bar doesn't use space because of flex display -->
+
+        <!-- Content -->
+        <!-- <div id="content" class="content"> -->
+            <div class="page" id="page1">
+                <p class="label">
+                    Dies scheint Ihre erste Verwendung des Programms zu sein. Sie haben nun die möglichkeit ScreenBreak einzurichten oder die Standartwerte zu verwenden.
+                    <br><br><br>aahahah
+                </p>
+            </div>
+            <div class="page" id="page2" style="display: none;">
+                <p class="label">
+                    Eyyy this a  long text to test whether or not this works correctly
+                </p>
+            </div>
+        <!-- </div> -->
+
+
         <!-- Skip button -->
         <div class="buttonbox">
             <button id="skip" class="button dialog-button" onClick="skip()">
