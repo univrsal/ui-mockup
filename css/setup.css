@@ -15,21 +15,6 @@
     pointer-events: none;
 }
 
-.selection {
-    margin-top: 90px;
-    display: block;
-    margin-left: 20px;
-    margin-right: 20px;
-}
-
-.option {
-    padding: 10px 0px;
-}
-
-.selection > p {
-    text-align: center;
-}
-
 #makeGroupDialog > div{
     width: 400px;
     height: 400px;

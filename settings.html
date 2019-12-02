@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Mockup</title>
+    <link rel="stylesheet" href="./css/window.css">
+    <link rel="stylesheet" href="./css/controls.css">
+    <link rel="stylesheet" href="./css/settings.css">
+    <link rel="stylesheet" href="./css/extra.css">
+    <link rel="stylesheet" href="./css/popup.css">
+
+    <link rel="shortcut icon" type="image/png" href="img/icon.png">
+</head>
+
+<body onmouseup="stop_drag(event)" onmousemove="drag(event)">
+    <div id="bg-image"></div>
+
+    <div id="main" class="windowframe center settings">
+        <!-- Basic title bar -->
+        <div class="titlebar">
+            <div class="windowcontrols noselect">
+                <span class="dot red"></span>
+                <span class="dot orange"></span>
+                <span class="dot green"></span>
+            </div>
+
+            <p class="label windowtitle centerv">ScreenBreak - Einstellungen</p>
+        </div>
+        
+        <!-- Window content -->
+        <div class="tab-bar spacer-small">
+            <button id="tab1" class="tab-button tab-button-left tab-button-pressed" onClick="select_tab(event)">
+                Allgemein
+            </button>
+            <button id="tab2" class="tab-button tab-button-middle" onClick="select_tab(event)">
+                Gruppen
+            </button>
+            <button id="tab3" class="tab-button tab-button-middle" onClick="select_tab(event)">
+                Pausen
+            </button>
+            <button id="tab4" class="tab-button tab-button-middle" onClick="select_tab(event)">
+                Integration
+            </button>
+            <button id="tab5" class="tab-button tab-button-right" onClick="select_tab(event)">
+                Impressum
+            </button>
+        </div>
+          
+        <!-- Skip button -->
+        <div class="buttonbox">
+            <button id="skip" class="button dialog-button" onClick="skip()">
+                <p class="label">OK</p>
+            </button>
+
+            <button id="back" class="button dialog-button" onClick="back()">
+                <p class="label">Abbrechen</p>
+            </button>
+        </div>
+        
+        <!-- Resize Corner -->
+        <div id="resize" onmousedown="start_drag(event)"></div>
+    </div>
+
+    <!-- Popups -->
+
+    <script src="./js/setup.js"></script>
+    <script src="./js/settings.js"></script>
+</body>
+
+</html>

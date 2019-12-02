@@ -12,8 +12,13 @@ var pages = {
 
 function skip()
 {
-    if (cur_page >= 4)
+    if (cur_page >= 4) {
+        document.getElementById('main').classList.add('fadeOut');
+        setTimeout(function() {
+            document.getElementById('main').style.display = 'none';
+        }, 500);
         return;
+    }
     var new_page = -1;
 
     switch (cur_page) {
@@ -176,7 +181,7 @@ function drag(event)
         main_pos.y = r.top;
         var w = event.pageX - 15 - main_pos.x;
         var h = event.pageY - 15 - main_pos.y;
-        setup.style.width = w + 'px';
-        setup.style.height = h + 'px';
+        main.style.width = w + 'px';
+        main.style.height = h + 'px';
     }
 }

@@ -31,7 +31,7 @@ html {
 
 .windowframe {
     padding: 8px;
-    border-radius: 3px;
+    border-radius: 6px;
     background: #393b3d;
     background-image: repeating-linear-gradient(#414446, #393b3d 4%, #393b3d 100%);
     border-style: solid;
@@ -101,7 +101,7 @@ html {
     text-align: center;
 }
 
-.centerv {
+.centerv, .tab-bar {
     left: 50%;
     transform: translate3d(-50%, 0, 0);
     position: absolute;
