@@ -6,6 +6,7 @@ function select_tab(event, id)
     document.activeElement.blur();
     if (id === active_tab_id)
         return;
+
     /* Handle tab bar */
     var tabs = document.getElementsByClassName('tab-button');
     for (var i = 0; i < tabs.length; i++) {

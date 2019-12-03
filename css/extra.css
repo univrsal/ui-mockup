@@ -53,7 +53,7 @@
     opacity: 0;
     transform: scale(0);
 }
-  
+
 .cbx + span,
 .rdo + span {
     float: left;
@@ -86,7 +86,7 @@ input[type="radio"]:checked + .rdo:after {
     transition: all 0.25s ease;
 }
 
-    input[type="checkbox"]:checked + .cbx {
+input[type="checkbox"]:checked + .cbx {
     background-color: #606062;
     background-image: linear-gradient(#255cd2, #1d52c1);
 }
@@ -94,4 +94,30 @@ input[type="radio"]:checked + .rdo:after {
 input[type="checkbox"]:checked + .cbx svg {
     stroke-dashoffset: 0;
     transition: all 0.25s ease;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    padding: 5px;;
+}
+
+.tooltip .tooltip-text {
+    visibility: hidden;
+    width: 120px;
+    background-color: #6c6d71;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    left: 105%;
+}
+
+.tooltip:hover .tooltip-text {
+    visibility: visible;
 }
