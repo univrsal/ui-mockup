@@ -78,8 +78,7 @@
             <label for="rdo4">
                 <input type="radio" id="rdo4" name="notifications">
                 <span class="rdo"></span>
-                <span>Stummschalten
-                </span>
+                <span>Stummschalten</span>
             </label>
             <label for="rdo5">
                 <input type="radio" id="rdo5" name="notifications">
@@ -88,7 +87,10 @@
             </label>
             
             <!-- time controls -->
-            <p class="label option">Zeiteinschränkungen</p>
+            <div class="spacer"></div>
+            <p class="label medium">Zeiteinschränkungen</p>
+            <div class="spacer-small"></div>
+            
             <div class="horizontal-options">
                 <label for="cbk3">
                     <input type="checkbox" id="cbk3">
@@ -99,12 +101,12 @@
                     </span>
                     <span>Uhrzeit</span>
                 </label>
-
+                
                 <div class="horizontal-options">
-                    <p class="label">Von</p>
+                    <p class="label spin-label">Von</p>
                     <div class="time-input">
                         <input type="text" id="time" class="spinbox" value="14:00" oninput="handle_time(event)">
-                        <div class="spinbox-buttons">
+                        <div class="spinbox-buttons" style="float: left;">
                             <button class="spinbox-up">
                                 <svg width="20px" height="12px" viewBox="0 0 12 20">
                                     <polyline points="2.47 8.506 10 0.918 17.530 8.506"></polyline>
@@ -117,31 +119,74 @@
                             </button>
                         </div>
                     </div>
-                    
+                    <p class="label spin-label">bis</p>
                 </div>
             </div>
         </div>
         
+        <!-- Groups -->
         <div class="page" id="page2" style="display: none;">
             <p class="label medium">
                 Page 2 
             </p>
         </div>
         
+        <!-- Breaks -->
         <div class="page" id="page3" style="display: none;">
             <p class="label medium">
                 Page 3
             </p>
         </div>
         
+        <!-- Integration -->
+        <div class="page" id="page4" style="display: none;">
+            <p class="label medium">
+                Klicken Sie auf einen der Dienste, um sich ein oder auszuloggen oder
+                festzulegen, welche Daten importiert werden sollen.
+            </p>
+            
+            <!-- Selection -->
+            <div class="selection">
+                <div class="listCenter">
+                    <div class="buttonList">
+                        <button id="ms" class="button" onClick="open_dialog('serviceLoginDialog', 'Microsoft')">
+                            <img class="buttonIconSmall" src="./img/ms.svg">
+                            <p class="label medium ">Microsoft</p>
+                        </button>
+                        
+                        <button id="google" class="button" onClick="open_dialog('serviceLoginDialog', 'Google')">
+                            <img class="buttonIconSmall" src="./img/g.svg">
+                            <p class="label medium">Google</p>
+                        </button>
+                        
+                        <button id="nc" class="button" onClick="open_dialog('serviceLoginDialog', 'Nextcloud')">
+                            <img class="buttonIconSmall" src="./img/nc.svg">
+                            <p class="label medium">Nextcloud</p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- About -->
+        <div class="page" id="page5" style="display: none;">
+            <img class="logo shadow noselect" src="./img/icon.svg">
+            <p class="label big title">
+                ScreenBreak
+            </p>
+            <p class="label medium" style="padding-right: 10px;">
+                ScreenBreak ist ein kleines Programm, um den Ausgleich zwischen Arbeit und Pausen
+                einfach und intuitiv gestaltet.
+            </p>
+        </div>
         
         <!-- Skip button -->
         <div class="buttonbox">
-            <button id="skip" class="button dialog-button" onClick="skip()">
+            <button id="skip" class="button dialog-button" onClick="">
                 <p class="label">OK</p>
             </button>
             
-            <button id="back" class="button dialog-button" onClick="back()">
+            <button id="back" class="button dialog-button" onClick="">
                 <p class="label">Abbrechen</p>
             </button>
         </div>
@@ -151,6 +196,62 @@
     </div>
     
     <!-- Popups -->
+    <!-- Service integration -->
+    <div id="serviceLoginDialog" class="modal-window">
+        <div>
+            <div class="titlebar">
+                <div class="windowcontrols" onClick="close_dialog('serviceLoginDialog')">
+                    <span class="dot red"></span>
+                </div>
+                
+                <p id="serviceTitle" class="label windowtitle centerv">Login</p>
+            </div>
+            
+            <div class="spacer"></div>
+            <input id="serviceEmail" type="text" class="textbox fullInput" placeholder="E-Mail Adresse">
+            <input id="servicePassword" type="password" class="textbox fullInput" placeholder="Passwort">
+            
+            <div class="spacer"></div>
+            <p class="label">Importiere</p>
+            <div class="spacer-small"></div>
+            
+            <div class="multi-select">
+                <label for="cbk20">
+                    <input type="checkbox" id="cbk20">
+                    <span class="cbx">
+                        <svg width="12px" height="11px" viewBox="0 0 12 11">
+                            <polyline points="0.75 4.721 3.375 7.5 8.25 0.75"></polyline>
+                        </svg>
+                    </span>
+                    <span>Kontakte</span>
+                </label>
+                <label for="cbk21">
+                    <input type="checkbox" id="cbk21">
+                    <span class="cbx">
+                        <svg width="12px" height="11px" viewBox="0 0 12 11">
+                            <polyline points="0.75 4.721 3.375 7.5 8.25 0.75"></polyline>
+                        </svg>
+                    </span>
+                    <span>Notizen</span>
+                </label>
+                <label for="cbk22">
+                    <input type="checkbox" id="cbk22">
+                    <span class="cbx">
+                        <svg width="12px" height="11px" viewBox="0 0 12 11">
+                            <polyline points="0.75 4.721 3.375 7.5 8.25 0.75"></polyline>
+                        </svg>
+                    </span>
+                    <span>Termine</span>
+                </label>
+            </div>
+            
+            <div class="buttonbox">
+                <button id="close-service-dialog" class="button dialog-button" onClick="close_dialog('serviceLoginDialog')">
+                    <p class="label">OK</p>
+                </button>
+            </div>
+        </div>
+    </div>
     
     <script src="./js/setup.js"></script>
     <script src="./js/settings.js"></script>

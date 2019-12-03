@@ -1,5 +1,6 @@
 var active_tab_id = 1;
 var active_tab = document.getElementById('page1');
+var slide_block = false;
 
 function handle_time(event)
 {
@@ -12,6 +13,9 @@ function handle_time(event)
 function select_tab(event, id)
 {
     document.activeElement.blur();
+    if (slide_block)
+        return;
+    slide_block = true;
     if (id === active_tab_id)
         return;
 
@@ -41,7 +45,8 @@ function select_tab(event, id)
         next_tab.classList.remove(in_class);
         active_tab.classList.remove(out_class);
         active_tab.style.display = 'none'; 
-    }, 250, in_class, out_class, next_tab, active_tab);
+        slide_block = false;
+    }, 500, in_class, out_class, next_tab, active_tab);
 
     active_tab = next_tab;
     active_tab_id = id;
