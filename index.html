@@ -9,14 +9,14 @@
     <link rel="stylesheet" href="./css/setup.css">
     <link rel="stylesheet" href="./css/extra.css">
     <link rel="stylesheet" href="./css/popup.css">
-
-
+    
+    
     <link rel="shortcut icon" type="image/png" href="img/icon.png">
 </head>
 
 <body onmouseup="stop_drag(event)" onmousemove="drag(event)">
     <div id="bg-image"></div>
-
+    
     <div id="main" class="windowframe center setup">
         <!-- Basic title bar -->
         <div class="titlebar">
@@ -25,14 +25,14 @@
                 <span class="dot orange"></span>
                 <span class="dot green"></span>
             </div>
-
+            
             <p class="label windowtitle centerv">ScreenBreak - Setup</p>
         </div>
-
+        
         <!-- Window content -->
         <div class="pages">
             <div class="page" id="page1">
-
+                
                 <div class="header">
                     <img class="logo shadow noselect" src="./img/icon.svg">
                     <p class="label big title">
@@ -42,18 +42,18 @@
                         Dies scheint Ihre erste Verwendung des Programms zu sein. Sie haben nun die möglichkeit ScreenBreak einzurichten oder die Standartwerte zu verwenden.
                     </p>
                 </div>
-
+                
                 <!-- Selection -->
                 <div class="selection">
                     <p class="label medium option">Wie möchten Sie ScreenBreak verwenden?</p>
-
+                    
                     <div class="listCenter">
                         <div class="buttonList">
                             <button id="office" class="button" onClick="goto_page(2)">
                                 <img class="buttonIcon" src="./img/office2.svg">
                                 <p class="label medium ">Im Büro</p>
                             </button>
-
+                            
                             <button id="home" class="button" onClick="goto_page(3)">
                                 <img class="buttonIcon " src="./img/home.svg">
                                 <p class="label medium">Zuhause</p>
@@ -62,7 +62,7 @@
                     </div>
                 </div>
             </div>
-
+            
             <!-- Group info page -->
             <div class="page" id="page2" style="display: none;">
                 <div class="header">
@@ -74,7 +74,7 @@
                         Option steht auch später in den Einstellungen zur Verfügung.
                     </p>
                 </div>
-
+                
                 <!-- Selection -->
                 <div class="selection">
                     <div class="listCenter">
@@ -83,7 +83,7 @@
                                 <img class="buttonIcon" src="./img/plus.svg">
                                 <p class="label medium ">Erstellen</p>
                             </button>
-
+                            
                             <button id="join" class="button" onClick="open_dialog('joinGroupDialog')">
                                 <img class="buttonIcon " src="./img/door.svg">
                                 <p class="label medium">Beitreten</p>
@@ -92,7 +92,7 @@
                     </div>
                 </div>
             </div>
-
+            
             <!-- Services -->
             <div class="page" id="page3" style="display: none;">
                 <div class="header">
@@ -104,7 +104,7 @@
                         Um Ihnen passende Erinnerungen in den Pausen zu geben, hat ScreenBreak die Möglichkeit diese aus anderen Diensten zu importieren. <br><br> Sie können sich jetzt oder Später in den Einstellungen direkt in unterstützte Dienste einloggen.
                     </p>
                 </div>
-
+                
                 <!-- Selection -->
                 <div class="selection">
                     <div class="listCenter">
@@ -113,12 +113,12 @@
                                 <img class="buttonIconSmall" src="./img/ms.svg">
                                 <p class="label medium ">Microsoft</p>
                             </button>
-
+                            
                             <button id="google" class="button" onClick="open_dialog('serviceLoginDialog', 'Google')">
                                 <img class="buttonIconSmall" src="./img/g.svg">
                                 <p class="label medium">Google</p>
                             </button>
-
+                            
                             <button id="nc" class="button" onClick="open_dialog('serviceLoginDialog', 'Nextcloud')">
                                 <img class="buttonIconSmall" src="./img/nc.svg">
                                 <p class="label medium">Nextcloud</p>
@@ -127,47 +127,47 @@
                     </div>
                 </div>
             </div>
-
+            
             <!-- Finished -->
             <div class="page" id="page4" style="display: none;">
-                    <div class="header">
-                        <!-- <img class="logo shadow" src="./icon.svg"> -->
-                        <p class="label big title">
-                            Geschafft!
-                        </p>
-                        <p class="label medium">
-                            ScreenBreak ist jetzt für die Verwendung bereit. Falls Sie Ihre getroffenen Einstellungen
-                            nochmal überarbeiten möchten, oder andere anpassen möchten, können Sie jetzt die Einstellungen öffnen.
-                            <br><br>
-                            Wenn Ihnen der Standardablauf ausreicht, können Sie jetzt das Programm starten. Sie werden dann in
-                            50 Minuten an eine zehn Minuten Pause erinnert.
-                        </p>
-                    </div>
-    
-                    <!-- Selection -->
-                    <div class="selection">
-                        <div class="listCenter">
-                            <div class="buttonList">
-                                <button id="ms" class="button">
-                                    <img class="buttonIconSmall" src="./img/timer.svg">
-                                    <p class="label medium ">ScreenBreak starten</p>
-                                </button>
-                                <button id="ms" class="button" onclick="window.location.href = './settings.html';">
-                                    <img class="buttonIconSmall" src="./img/gear.svg">
-                                    <p class="label medium ">Einstellungen öffnen</p>
-                                </button>
-                            </div>
+                <div class="header">
+                    <!-- <img class="logo shadow" src="./icon.svg"> -->
+                    <p class="label big title">
+                        Geschafft!
+                    </p>
+                    <p class="label medium">
+                        ScreenBreak ist jetzt für die Verwendung bereit. Falls Sie Ihre getroffenen Einstellungen
+                        nochmal überarbeiten möchten, oder andere anpassen möchten, können Sie jetzt die Einstellungen öffnen.
+                        <br><br>
+                        Wenn Ihnen der Standardablauf ausreicht, können Sie jetzt das Programm starten. Sie werden dann in
+                        50 Minuten an eine zehn Minuten Pause erinnert.
+                    </p>
+                </div>
+                
+                <!-- Selection -->
+                <div class="selection">
+                    <div class="listCenter">
+                        <div class="buttonList">
+                            <button id="ms" class="button">
+                                <img class="buttonIconSmall" src="./img/timer.svg">
+                                <p class="label medium ">ScreenBreak starten</p>
+                            </button>
+                            <button id="ms" class="button" onclick="window.location.href = './settings.html';">
+                                <img class="buttonIconSmall" src="./img/gear.svg">
+                                <p class="label medium ">Einstellungen öffnen</p>
+                            </button>
                         </div>
                     </div>
                 </div>
+            </div>
         </div>
-
+        
         <!-- Skip button -->
         <div class="buttonbox">
             <button id="skip" class="button dialog-button" onClick="skip()">
                 <p class="label">Überspringen</p>
             </button>
-
+            
             <button id="back" class="button dialog-button" style="display: none;" onClick="back()">
                 <p class="label">Zurück</p>
             </button>
@@ -176,9 +176,9 @@
         <!-- Resize Corner -->
         <div id="resize" onmousedown="start_drag(event)"></div>
     </div>
-
+    
     <!-- Popups -->
-
+    
     <!-- Make group -->
     <div id="makeGroupDialog" class="modal-window">
         <div>
@@ -188,14 +188,14 @@
                 </div>
                 <p class="label windowtitle centerv">Neue Gruppe</p>
             </div>
-
-            <input id="newGroupText" type="text" class="fullInput" placeholder="Gruppenname">
+            
+            <input id="newGroupText" type="text" class="textbox fullInput" placeholder="Gruppenname">
             
             <div class="spacer-small"></div>
             
             <p class="label">Hinzufügen</p>
             <div class="control-container">
-                <input id="addMemberText" type="text" class="cell" placeholder="Teilnehmer">
+                <input id="addMemberText" type="text" class="textbox cell" placeholder="Teilnehmer">
                 <button id="skip" class="button control-button" onClick="">
                     <p class="label">+</p>
                 </button>
@@ -213,7 +213,7 @@
                     <p class="label">Entferne ausgewählten Teilnehmer</p>
                 </button>
             </div>
-
+            
             <div class="buttonbox">
                 <button id="skip" class="button dialog-button" onClick="close_dialog('makeGroupDialog', handle_create)">
                     <p class="label">OK</p>
@@ -221,7 +221,7 @@
             </div>
         </div>
     </div>
-
+    
     <!-- Join group -->
     <div id="joinGroupDialog" class="modal-window">
         <div>
@@ -229,11 +229,11 @@
                 <div class="windowcontrols" onClick="close_dialog('joinGroupDialog')">
                     <span class="dot red"></span>
                 </div>
-
+                
                 <p class="label windowtitle centerv">Gruppe beitreten</p>
             </div>
-
-            <input id="joinGroupText" type="text" class="fullInput" placeholder="Gruppenname">
+            
+            <input id="joinGroupText" type="text" class="textbox fullInput" placeholder="Gruppenname">
             
             <div class="spacer-small"></div>
             
@@ -254,7 +254,7 @@
             </div>
         </div>
     </div>
-
+    
     <!-- Service integration -->
     <div id="serviceLoginDialog" class="modal-window">
         <div>
@@ -262,13 +262,13 @@
                 <div class="windowcontrols" onClick="close_dialog('serviceLoginDialog')">
                     <span class="dot red"></span>
                 </div>
-
+                
                 <p id="serviceTitle" class="label windowtitle centerv">aaaa</p>
             </div>
-
+            
             <div class="spacer"></div>
-            <input id="serviceEmail" type="text" class="fullInput" placeholder="E-Mail Adresse">
-            <input id="servicePassword" type="password" class="fullInput" placeholder="Passwort">
+            <input id="serviceEmail" type="text" class="textbox fullInput" placeholder="E-Mail Adresse">
+            <input id="servicePassword" type="password" class="textbox fullInput" placeholder="Passwort">
             
             <div class="spacer"></div>
             <p class="label">Importiere</p>
@@ -285,25 +285,25 @@
                     <span>Kontakte</span>
                 </label>
                 <label for="cbk2">
-                        <input type="checkbox" id="cbk2">
-                        <span class="cbx">
-                            <svg width="12px" height="11px" viewBox="0 0 12 11">
-                                <polyline points="0.75 4.721 3.375 7.5 8.25 0.75"></polyline>
-                            </svg>
-                        </span>
-                        <span>Notizen</span>
+                    <input type="checkbox" id="cbk2">
+                    <span class="cbx">
+                        <svg width="12px" height="11px" viewBox="0 0 12 11">
+                            <polyline points="0.75 4.721 3.375 7.5 8.25 0.75"></polyline>
+                        </svg>
+                    </span>
+                    <span>Notizen</span>
                 </label>
                 <label for="cbk3">
-                        <input type="checkbox" id="cbk3">
-                        <span class="cbx">
-                            <svg width="12px" height="11px" viewBox="0 0 12 11">
-                                <polyline points="0.75 4.721 3.375 7.5 8.25 0.75"></polyline>
-                            </svg>
-                        </span>
-                        <span>Termine</span>
+                    <input type="checkbox" id="cbk3">
+                    <span class="cbx">
+                        <svg width="12px" height="11px" viewBox="0 0 12 11">
+                            <polyline points="0.75 4.721 3.375 7.5 8.25 0.75"></polyline>
+                        </svg>
+                    </span>
+                    <span>Termine</span>
                 </label>
             </div>
-
+            
             <div class="buttonbox">
                 <button id="skip" class="button dialog-button" onClick="close_dialog('serviceLoginDialog', handle_join)">
                     <p class="label">OK</p>

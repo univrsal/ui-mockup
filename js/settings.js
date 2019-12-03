@@ -1,6 +1,14 @@
 var active_tab_id = 1;
 var active_tab = document.getElementById('page1');
 
+function handle_time(event)
+{
+    var check = /^[0-9]{1,2}:[0-9]{1,2}$/;
+    if (!event.target.value.match(check)) {
+        event.target.value = event.target.value.slice(0, -1);
+    }
+}
+
 function select_tab(event, id)
 {
     document.activeElement.blur();
