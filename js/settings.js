@@ -3,8 +3,10 @@ var active_tab = document.getElementById('page1');
 
 function select_tab(event, id)
 {
-    /* Handle tab bar */
     document.activeElement.blur();
+    if (id === active_tab_id)
+        return;
+    /* Handle tab bar */
     var tabs = document.getElementsByClassName('tab-button');
     for (var i = 0; i < tabs.length; i++) {
         tabs[i].classList.remove('tab-button-pressed');

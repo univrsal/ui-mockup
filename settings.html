@@ -9,13 +9,13 @@
     <link rel="stylesheet" href="./css/settings.css">
     <link rel="stylesheet" href="./css/extra.css">
     <link rel="stylesheet" href="./css/popup.css">
-
+    
     <link rel="shortcut icon" type="image/png" href="img/icon.png">
 </head>
 
 <body onmouseup="stop_drag(event)" onmousemove="drag(event)">
     <div id="bg-image"></div>
-
+    
     <div id="main" class="windowframe center settings">
         <!-- Basic title bar -->
         <div class="titlebar">
@@ -24,7 +24,7 @@
                 <span class="dot orange"></span>
                 <span class="dot green"></span>
             </div>
-
+            
             <p class="label windowtitle centerv">ScreenBreak - Einstellungen</p>
         </div>
         
@@ -47,28 +47,46 @@
             </button>
         </div>
         <div style="height: 50px;"></div> <!-- Tab bar doesn't use space because of flex display -->
-
+        
         <!-- Content -->
-        <!-- <div id="content" class="content"> -->
-            <div class="page" id="page1" >
-                <p class="label">
-                    Dies scheint Ihre erste Verwendung des Programms zuein. 
-                </p>
-            </div>
-            <div class="page" id="page2" style="display: none;">
-                <p class="label">
-                    Eyyy this a  long text to test whether or not this works correctlyasjfa;lajfds;lfdasdfasddsaafdsasdfasdfasdfadsfsafdsfd
-                </p>
-            </div>
-        <!-- </div> -->
-
-
+        <div class="page" id="page1" >
+            <p class="label medium">
+                Design
+            </p>
+            <div class="spacer-small"></div>
+            <label for="rdo1">
+                <input type="radio" checked="checked" id="rdo1" name="theme">
+                <span class="rdo"></span>
+                <span>Dunkel</span>
+            </label>
+            <label for="rdo2">
+                <input type="radio" id="rdo2" name="theme">
+                <span class="rdo"></span>
+                <span>Hell</span>
+            </label>
+            <div class="spacer-small"></div>
+            
+        </div>
+        
+        <div class="page" id="page2" style="display: none;">
+            <p class="label medium">
+                Page 2 
+            </p>
+        </div>
+        
+        <div class="page" id="page3" style="display: none;">
+            <p class="label medium">
+                Page 3
+            </p>
+        </div>
+        
+        
         <!-- Skip button -->
         <div class="buttonbox">
             <button id="skip" class="button dialog-button" onClick="skip()">
                 <p class="label">OK</p>
             </button>
-
+            
             <button id="back" class="button dialog-button" onClick="back()">
                 <p class="label">Abbrechen</p>
             </button>
@@ -77,9 +95,9 @@
         <!-- Resize Corner -->
         <div id="resize" onmousedown="start_drag(event)"></div>
     </div>
-
+    
     <!-- Popups -->
-
+    
     <script src="./js/setup.js"></script>
     <script src="./js/settings.js"></script>
 </body>

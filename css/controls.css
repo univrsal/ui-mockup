@@ -209,6 +209,10 @@ option {
 }
 
 /* === Page layout === */
+.header {
+    margin: 10px;
+}
+
 .page, .pages {
     position: relative;
     width: auto;

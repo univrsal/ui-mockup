@@ -6,6 +6,7 @@
 }
 .page {
     height: 100%;
+    padding: 10px;
 }
 
 .move-left-out {
