@@ -53,11 +53,9 @@ function handle_time(event)
 function select_tab(event, id)
 {
     document.activeElement.blur();
-    if (slide_block)
-    return;
+    if (slide_block || id === active_tab_id)
+        return;
     slide_block = true;
-    if (id === active_tab_id)
-    return;
     
     /* Handle tab bar */
     var tabs = document.getElementsByClassName('tab-button');

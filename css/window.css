@@ -60,6 +60,12 @@ html {
     box-shadow: 0px 0px 5px 5px #2928288f;
 }
 
+.dot-icon {
+    width: 18px;
+    height: 18px;
+    margin-left: -23px;
+}
+
 .dot {
     height: 14px;
     width: 14px;
@@ -71,7 +77,7 @@ html {
 }
 
 .red {
-    background-color: #ec514d;
+    background-color: #fd5754;
     transition: background-color 0.5s;
 }
 
@@ -88,25 +94,25 @@ html {
 }
 
 .red:hover {
-    background-color: #ff6961;
+    background-color: #ff8380;
 }
 
 .orange {
-    background-color: #f8bf35;
+    background-color: #febb40;
     transition: background-color 0.5s;
 }
 
 .orange:hover {
-    background-color: #f6cb63;
+    background-color: #ffcf78;
 }
 
 .green {
-    background-color: #63cd44;
+    background-color: #34c848;
     transition: background-color 0.5s;
 }
 
 .green:hover {
-    background-color: #9fd090;
+    background-color: #79e488;
 }
 
 .windowcontrols {

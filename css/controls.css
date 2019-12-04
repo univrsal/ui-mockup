@@ -90,11 +90,16 @@ input[type=checkbox] {
 a {
     color: #7da6ff;
 }
+
 .disabled {
     pointer-events: none;
     animation-name: disable;
     filter: grayscale(100%);
     animation-duration: 0.5s;
+}
+
+.disabled + button {
+    color: gray;
 }
 
 @keyframes disable{
