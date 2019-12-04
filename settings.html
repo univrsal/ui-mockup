@@ -91,44 +91,137 @@
             <p class="label medium">Zeiteinschränkungen</p>
             <div class="spacer-small"></div>
             
-            <div class="horizontal-options">
-                <label for="cbk3">
-                    <input type="checkbox" id="cbk3">
-                    <span class="cbx">
-                        <svg width="12px" height="11px" viewBox="0 0 12 11">
-                            <polyline points="0.75 4.721 3.375 7.5 8.25 0.75"></polyline>
-                        </svg>
-                    </span>
-                    <span>Uhrzeit</span>
-                </label>
-                
-                <div class="horizontal-options">
-                    <p class="label spin-label">Von</p>
-                    <div class="time-input">
-                        <input type="text" id="time" class="spinbox" value="14:00" oninput="handle_time(event)">
-                        <div class="spinbox-buttons" style="float: left;">
-                            <button class="spinbox-up">
-                                <svg width="20px" height="12px" viewBox="0 0 12 20">
-                                    <polyline points="2.47 8.506 10 0.918 17.530 8.506"></polyline>
-                                </svg>
-                            </button>
-                            <button class="spinbox-down">
-                                <svg width="20px" height="12px" viewBox="0 0 12 20">
-                                    <polyline points="2.47 0.728 10 8.316 17.530 0.728"></polyline>
-                                </svg>
-                            </button>
-                        </div>
+            <label for="cbk3">
+                <input type="checkbox" id="cbk3" onclick="toggle_options(event, 'time-day')">
+                <span class="cbx">
+                    <svg width="12px" height="11px" viewBox="0 0 12 11">
+                        <polyline points="0.75 4.721 3.375 7.5 8.25 0.75"></polyline>
+                    </svg>
+                </span>
+                <span>Uhrzeit</span>
+            </label>
+            
+            <div id="time-day" class="horizontal-options">
+                <p class="label spin-label">Von</p>
+                <div class="time-input inline disabled">
+                    <input type="text" id="time" class="spinbox" value="14:00" oninput="handle_time(event)">
+                    <div class="spinbox-buttons" style="float: left;">
+                        <button class="spinbox-up">
+                            <svg width="20px" height="12px" viewBox="0 0 12 20">
+                                <polyline points="2.47 8.506 10 0.918 17.530 8.506"></polyline>
+                            </svg>
+                        </button>
+                        <button class="spinbox-down">
+                            <svg width="20px" height="12px" viewBox="0 0 12 20">
+                                <polyline points="2.47 0.728 10 8.316 17.530 0.728"></polyline>
+                            </svg>
+                        </button>
                     </div>
-                    <p class="label spin-label">bis</p>
                 </div>
+                
+                <p class="label spin-label inline">bis</p>
+                <div class="time-input inline disabled">
+                    <input type="text" id="time" class="spinbox" value="00:00" oninput="handle_time(event)">
+                    <div class="spinbox-buttons" style="float: left;">
+                        <button class="spinbox-up">
+                            <svg width="20px" height="12px" viewBox="0 0 12 20">
+                                <polyline points="2.47 8.506 10 0.918 17.530 8.506"></polyline>
+                            </svg>
+                        </button>
+                        <button class="spinbox-down">
+                            <svg width="20px" height="12px" viewBox="0 0 12 20">
+                                <polyline points="2.47 0.728 10 8.316 17.530 0.728"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <p class="label spin-label inline">ScreenBreak pausieren</p>
+            </div>
+            
+            <div class="clearBoth"></div>
+            <div class="spacer-small"></div>
+            
+            <label for="cbk4">
+                <input type="checkbox" id="cbk4" onchange="toggle_options(event, 'time-weekday')">
+                <span class="cbx">
+                    <svg width="12px" height="11px" viewBox="0 0 12 11">
+                        <polyline points="0.75 4.721 3.375 7.5 8.25 0.75"></polyline>
+                    </svg>
+                </span>
+                <span>Wochentag</span>
+            </label>
+            
+            <div id="time-weekday" class="horizontal-options">
+                <p class="label spin-label">Von</p>
+                <div class="time-input inline disabled">
+                    <input type="text" id="time" class="spinbox" value="Samstag" oninput="">
+                    <div class="spinbox-buttons" style="float: left;">
+                        <button class="spinbox-up">
+                            <svg width="20px" height="12px" viewBox="0 0 12 20">
+                                <polyline points="2.47 8.506 10 0.918 17.530 8.506"></polyline>
+                            </svg>
+                        </button>
+                        <button class="spinbox-down">
+                            <svg width="20px" height="12px" viewBox="0 0 12 20">
+                                <polyline points="2.47 0.728 10 8.316 17.530 0.728"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                
+                <p class="label spin-label inline">bis</p>
+                <div class="time-input inline disabled">
+                    <input type="text" id="time" class="spinbox" value="Sonntag" oninput="">
+                    <div class="spinbox-buttons" style="float: left;">
+                        <button class="spinbox-up">
+                            <svg width="20px" height="12px" viewBox="0 0 12 20">
+                                <polyline points="2.47 8.506 10 0.918 17.530 8.506"></polyline>
+                            </svg>
+                        </button>
+                        <button class="spinbox-down">
+                            <svg width="20px" height="12px" viewBox="0 0 12 20">
+                                <polyline points="2.47 0.728 10 8.316 17.530 0.728"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <p class="label spin-label inline">ScreenBreak pausieren</p>
             </div>
         </div>
         
         <!-- Groups -->
         <div class="page" id="page2" style="display: none;">
             <p class="label medium">
-                Page 2 
+                Beigetretene Gruppen
             </p>
+            <select size="6">
+                <option>Gruppe1</option>
+                <option>Gruppe2</option>
+            </select>
+            <div class="modify-box">
+                <button id="skip" class="button" onClick="">
+                    <p class="label">Ausgewählte Gruppe verlassen</p>
+                </button>
+                <button id="skip" class="button" onClick="">
+                    <p class="label">Ausgewählte Gruppe bearbeiten</p>
+                </button>
+            </div>
+
+            <div class="spacer"></div>
+            <label class="medium">Weitere Optionen</label>
+            <div class="listCenter">
+                <div class="buttonList">
+                    <button id="add" class="button" onClick="open_dialog('makeGroupDialog')">
+                        <img class="buttonIcon" src="./img/plus.svg">
+                        <p class="label medium ">Erstellen</p>
+                    </button>
+                    
+                    <button id="join" class="button" onClick="open_dialog('joinGroupDialog')">
+                        <img class="buttonIcon " src="./img/door.svg">
+                        <p class="label medium">Beitreten</p>
+                    </button>
+                </div>
+            </div>
         </div>
         
         <!-- Breaks -->
@@ -176,7 +269,17 @@
             </p>
             <p class="label medium" style="padding-right: 10px;">
                 ScreenBreak ist ein kleines Programm, um den Ausgleich zwischen Arbeit und Pausen
-                einfach und intuitiv gestaltet.
+                einfach und intuitiv zu gestalten.
+            </p>
+            <div style="height: 100px;"></div> 
+            <p class="label medium" style="text-align: center;">
+                ScreenBreak v1.0<br>
+                <a target="_blank" href="https://example.com">http://screen.break</a><br>
+                contact@screen.break
+            </p> 
+            <div style="height: 50px;"></div>
+            <p class="label">ScreenBreak ist <a target="_blank" href="https://fsf.org/about/what-is-free-software">Freie Software</a>
+                lizensiert unter der GPL v3.0
             </p>
         </div>
         
@@ -253,6 +356,81 @@
         </div>
     </div>
     
+    <!-- Groups -->
+    <div id="makeGroupDialog" class="modal-window">
+        <div>
+            <div class="titlebar">
+                <div class="windowcontrols" onClick="close_dialog('makeGroupDialog')">
+                    <span class="dot red"></span>
+                </div>
+                <p class="label windowtitle centerv">Neue Gruppe</p>
+            </div>
+            
+            <input id="newGroupText" type="text" class="textbox fullInput" placeholder="Gruppenname">
+            
+            <div class="spacer-small"></div>
+            
+            <p class="label">Hinzufügen</p>
+            <div class="control-container">
+                <input id="addMemberText" type="text" class="textbox cell" placeholder="Teilnehmer">
+                <button id="skip" class="button control-button" onClick="">
+                    <p class="label">+</p>
+                </button>
+            </div>
+            
+            <div class="spacer-small"></div>
+            
+            <p class="label">Teilnehmer</p>
+            <select size="6">
+                <option>Rainer Vansinn</option>
+                <option>Gabe Newell</option>
+            </select>
+            <div class="modify-box">
+                <button id="skip" class="button" onClick="">
+                    <p class="label">Entferne ausgewählten Teilnehmer</p>
+                </button>
+            </div>
+            
+            <div class="buttonbox">
+                <button id="close-create-dialog" class="button dialog-button" onClick="close_dialog('makeGroupDialog', handle_create)">
+                    <p class="label">OK</p>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Join group -->
+    <div id="joinGroupDialog" class="modal-window">
+        <div>
+            <div class="titlebar">
+                <div class="windowcontrols" onClick="close_dialog('joinGroupDialog')">
+                    <span class="dot red"></span>
+                </div>
+                
+                <p class="label windowtitle centerv">Gruppe beitreten</p>
+            </div>
+            
+            <input id="joinGroupText" type="text" class="textbox fullInput" placeholder="Gruppenname">
+            
+            <div class="spacer-small"></div>
+            
+            <p class="label">Beigetretenen Gruppen</p>
+            <select size="6">
+                <option>Gruppe1</option>
+                <option>Gruppe2</option>
+            </select>
+            <div class="modify-box">
+                <button id="skip" class="button" onClick="">
+                    <p class="label">Ausgewählte Gruppe verlassen</p>
+                </button>
+            </div>
+            <div class="buttonbox">
+                <button id="close-join-dialog" class="button dialog-button" onClick="close_dialog('joinGroupDialog', handle_join)">
+                    <p class="label">OK</p>
+                </button>
+            </div>
+        </div>
+    </div>
     <script src="./js/setup.js"></script>
     <script src="./js/settings.js"></script>
 </body>

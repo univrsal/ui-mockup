@@ -78,3 +78,18 @@
         filter: opacity(0%)
     }
 }
+
+#serviceLoginDialog > div{
+    width: 390px;
+    height: 210px;
+}
+
+#makeGroupDialog > div{
+    width: 400px;
+    height: 400px;
+}
+
+#joinGroupDialog > div{
+    width: 320px;
+    height: 320px;
+}
