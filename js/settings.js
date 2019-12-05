@@ -89,3 +89,35 @@ function select_tab(event, id)
     active_tab = next_tab;
     active_tab_id = id;
 }
+
+/* Timeline */
+function date() {
+    var d = new Date();
+    d.setHours(9);
+    d.setMinutes(0);
+    d.setSeconds(0);
+    return d;
+}
+
+function date_add(hours, minutes) {
+    var copy = date(); 
+    copy.setHours(copy.getHours() + hours);
+    copy.setMinutes(copy.getMinutes() + minutes);
+    return copy;
+}
+
+var container = document.getElementById('visualization');
+var items = new vis.DataSet([
+    {id: 1, start: date_add(0, 50), end: date_add(1, 0), className: 'missed'},
+    {id: 2, start: date_add(1, 50), end: date_add(2, 0), className: 'taken'},
+    {id: 3, start: date_add(2, 50), end: date_add(3, 0), className: 'upcoming'},
+    {id: 4, start: date_add(3, 50), end: date_add(4, 0), className: 'upcoming'}
+])
+
+var options = {
+    min: date_add(-9, 0),
+    max: date_add(15, 0),
+    minHeight: '100px'
+};
+
+var tl = new vis.Timeline(container, items, options);

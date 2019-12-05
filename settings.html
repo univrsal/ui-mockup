@@ -1,20 +1,20 @@
 <!--
-   settings.html is part of ui-mockup
-   created on Wednesday, 4th December 2019 16:32:28
-   github.com/univrsal/ui-mockup
-   Copyright 2019 univrsal (universailp@web.de)
-  
-   This program is free software: you can redistribute it and/or modify
-   it under the terms of the GNU Affero General Public License as published by
-   the Free Software Foundation, version 3 of the License.
-  
-   This program is distributed in the hope that it will be useful,
-   but WITHOUT ANY WARRANTY; without even the implied warranty of
-   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-   GNU General Public License for more details.
-  
-   You should have received a copy of the GNU General Public License
-   along with this program.  If not, see <http://www.gnu.org/licenses/>.
+    settings.html is part of ui-mockup
+    created on Wednesday, 4th December 2019 16:32:28
+    github.com/univrsal/ui-mockup
+    Copyright 2019 univrsal (universailp@web.de)
+    
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as published by
+    the Free Software Foundation, version 3 of the License.
+    
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+    
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
 
 <!DOCTYPE html>
@@ -23,14 +23,16 @@
 
 <head>
     <title>Mockup</title>
+    <link rel="stylesheet" href="./css/vis.min.css">
+    <script src="./js/vis.min.js"></script>
     <link rel="stylesheet" href="./css/window.css">
     <link rel="stylesheet" href="./css/controls.css">
     <link rel="stylesheet" href="./css/settings.css">
     <link rel="stylesheet" href="./css/extra.css">
     <link rel="stylesheet" href="./css/popup.css">
+    <link rel="stylesheet" href="./css/popup.css">
     
     <link rel="shortcut icon" type="image/png" href="img/icon.png">
-    
 </head>
 
 <body onmouseup="stop_drag(event)" onmousemove="drag(event)">
@@ -225,7 +227,7 @@
                     <p class="label">Ausgewählte Gruppe bearbeiten</p>
                 </button>
             </div>
-
+            
             <div class="spacer"></div>
             <label class="medium">Weitere Optionen</label>
             <div class="listCenter">
@@ -252,6 +254,37 @@
                 <option>50 Minuten Arbeitsphase</option>
                 <option>10 Minuten Pause</option>
             </select>
+            <div class="spacer"></div> 
+            <p class="label medium">
+                Übersicht
+            </p>
+            
+            <div class="spacer-small"></div>
+            <label for="rdo6">
+                <input type="radio" checked="checked" id="rdo6" name="time">
+                <span class="rdo"></span>
+                <span>Tag</span>
+            </label>
+            <label for="rdo7">
+                <input type="radio" id="rdo7" name="time">
+                <span class="rdo"></span>
+                <span>Woche</span>
+            </label>
+            <label for="rdo8">
+                <input type="radio" id="rdo8" name="time">
+                <span class="rdo"></span>
+                <span>Monat</span>
+            </label>
+            <div class="spacer-small"></div>
+            
+            <div class="timeline">
+                <div id="visualization"></div>
+                <div class="legend inline">
+                    <span class="missed legend-option"></span> <p class="label">Verpasst</p>
+                    <span class="taken legend-option"></span> <p class="label">Eingehalten</p>
+                    <span class="upcoming legend-option"></span> <p class="label">Geplant</p> 
+                </div>
+            </div>
         </div>
         
         <!-- Integration -->
@@ -313,7 +346,7 @@
             </button>
             
             <button id="back" class="button dialog-button" onClick="">
-                <p class="label">Abbrechen</p>
+                <p class="label">Speichern</p>
             </button>
         </div>
         

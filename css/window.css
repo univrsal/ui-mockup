@@ -95,6 +95,8 @@ html {
 
 .red:hover {
     background-color: #ff8380;
+    background-image: url("../img/x.svg");
+    background-size: 14px;
 }
 
 .orange {
@@ -104,6 +106,8 @@ html {
 
 .orange:hover {
     background-color: #ffcf78;
+    background-image: url("../img/min.svg");
+    background-size: 14px;
 }
 
 .green {
@@ -113,6 +117,8 @@ html {
 
 .green:hover {
     background-color: #79e488;
+    background-image: url("../img/max.svg");
+    background-size: 14px;
 }
 
 .windowcontrols {

@@ -1,0 +1,73 @@
+
+<!--
+   index.html is part of ui-mockup
+   created on Tuesday, 5rd December 2019 14:04:39
+   github.com/univrsal/ui-mockup
+   Copyright 2019 univrsal (universailp@web.de)
+  
+   This program is free software: you can redistribute it and/or modify
+   it under the terms of the GNU Affero General Public License as published by
+   the Free Software Foundation, version 3 of the License.
+  
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+  
+   You should have received a copy of the GNU General Public License
+   along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+
+<head>
+    <title>Mockup</title>
+    <link rel="stylesheet" href="./css/window.css">
+    <link rel="stylesheet" href="./css/controls.css">
+    <link rel="stylesheet" href="./css/setup.css">
+    <link rel="stylesheet" href="./css/extra.css">
+    <link rel="stylesheet" href="./css/popup.css">
+    
+    <link rel="shortcut icon" type="image/png" href="img/icon.png">
+</head>
+
+<body onmouseup="stop_drag(event)" onmousemove="drag(event)">
+    <div id="bg-image"></div>
+    
+    <div id="main" class="windowframe center setup">
+        <!-- Basic title bar -->
+        <div class="titlebar">
+            <div class="windowcontrols noselect">
+                <span class="dot red"></span>
+                <span class="dot orange"></span>
+                <span class="dot green"></span>
+            </div>
+            
+            <p class="label windowtitle centerv">ScreenBreak</p>
+        </div>
+        
+        <!-- Window content -->
+        
+        <!-- Skip button -->
+        <div class="buttonbox">
+            <button id="skip" class="button dialog-button" onClick="skip()">
+                <p class="label">Überspringen</p>
+            </button>
+            
+            <button id="back" class="button dialog-button" style="display: none;" onClick="back()">
+                <p class="label">Zurück</p>
+            </button>
+        </div>
+        
+        <!-- Resize Corner -->
+        <div id="resize" onmousedown="start_drag(event)"></div>
+    </div>
+    
+    <!-- Popups -->
+    
+    <script src="./js/setup.js"></script>
+</body>
+
+</html>
