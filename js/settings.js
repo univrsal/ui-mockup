@@ -1,25 +1,26 @@
 /*************************************************************************
- * settings.js is part of ui-mockup
- * created on Wednesday, 4th December 2019 16:32:27
- * github.com/univrsal/ui-mockup
- * Copyright 2019 univrsal (universailp@web.de)
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU Affero General Public License as published by
- * the Free Software Foundation, version 3 of the License.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- *************************************************************************/
+* settings.js is part of ui-mockup
+* created on Wednesday, 4th December 2019 16:32:27
+* github.com/univrsal/ui-mockup
+* Copyright 2019 univrsal (universailp@web.de)
+*
+* This program is free software: you can redistribute it and/or modify
+* it under the terms of the GNU Affero General Public License as published by
+* the Free Software Foundation, version 3 of the License.
+*
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
+*
+* You should have received a copy of the GNU General Public License
+* along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*************************************************************************/
 
 var active_tab_id = 1;
 var active_tab = document.getElementById('page1');
 var slide_block = false;
+
 
 function remove_class(from, name)
 {
@@ -54,7 +55,7 @@ function select_tab(event, id)
 {
     document.activeElement.blur();
     if (slide_block || id === active_tab_id)
-        return;
+    return;
     slide_block = true;
     
     /* Handle tab bar */
@@ -93,7 +94,7 @@ function select_tab(event, id)
 /* Timeline */
 function date() {
     var d = new Date();
-    d.setHours(9);
+    d.setHours(8);
     d.setMinutes(0);
     d.setSeconds(0);
     return d;

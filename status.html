@@ -1,21 +1,21 @@
 
 <!--
-   index.html is part of ui-mockup
-   created on Tuesday, 5rd December 2019 14:04:39
-   github.com/univrsal/ui-mockup
-   Copyright 2019 univrsal (universailp@web.de)
-  
-   This program is free software: you can redistribute it and/or modify
-   it under the terms of the GNU Affero General Public License as published by
-   the Free Software Foundation, version 3 of the License.
-  
-   This program is distributed in the hope that it will be useful,
-   but WITHOUT ANY WARRANTY; without even the implied warranty of
-   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-   GNU General Public License for more details.
-  
-   You should have received a copy of the GNU General Public License
-   along with this program.  If not, see <http://www.gnu.org/licenses/>.
+    index.html is part of ui-mockup
+    created on Tuesday, 5rd December 2019 14:04:39
+    github.com/univrsal/ui-mockup
+    Copyright 2019 univrsal (universailp@web.de)
+    
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as published by
+    the Free Software Foundation, version 3 of the License.
+    
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+    
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
 
 <!DOCTYPE html>
@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="./css/setup.css">
     <link rel="stylesheet" href="./css/extra.css">
     <link rel="stylesheet" href="./css/popup.css">
+    <link rel="stylesheet" href="./css/status.css">
     
     <link rel="shortcut icon" type="image/png" href="img/icon.png">
 </head>
@@ -45,19 +46,51 @@
                 <span class="dot green"></span>
             </div>
             
-            <p class="label windowtitle centerv">ScreenBreak</p>
+            <p class="label windowtitle centerh">ScreenBreak</p>
         </div>
         
         <!-- Window content -->
+        <div class="page listCenter outer">
+            <div class="middle">
+                <div class="inner">
+                    
+                    <p class="label huge" id="time">12:00</p>
+                    <p class="label medium" id="date">6. Dezember</p> 
+                    <div class="spacer"></div>
+
+                    <!-- Info box -->
+                    <div class="buttonList">
+                        <div class="left inline">
+                            <p id="breaks" class="label medium">2 von 10 Pausen</p>
+                            <p class="label" style="color: transparent;">placeholder</p>
+                            <button class="button min-button">Übersicht</button>
+                        </div>
+                        
+                        <div class="divider inline"></div>
+                        
+                        <div class="right inline">
+                            <p id="reminder" class="label medium">Nächste Pause </p>
+                            <p id="countdown" class="label">In 10 Minuten</p>
+                            <button class="button min-button">Überspringen</button>
+                        </div>
+                        <div class="clear-both"></div>
+                    </div>
+                    <br> 
+                    <div class="buttonList">
+                        <p class="label">Erinnerungen: <span style="color: #34c848; font-weight: bold;">Atkiv</span></p>
+                        <p class="label">Timer: <span style="color: #34c848; font-weight: bold;">Atkiv</span></p>
+                    </div>
+                </div>
+            </div>
+        </div> 
         
         <!-- Skip button -->
         <div class="buttonbox">
-            <button id="skip" class="button dialog-button" onClick="skip()">
-                <p class="label">Überspringen</p>
+            <button id="skip" class="button dialog-button" onClick="handle_close()">
+                <p class="label">OK</p>
             </button>
-            
-            <button id="back" class="button dialog-button" style="display: none;" onClick="back()">
-                <p class="label">Zurück</p>
+            <button id="skip" class="button dialog-button" onClick="settings()">
+                <p class="label">Einstellungen</p>
             </button>
         </div>
         
@@ -68,6 +101,7 @@
     <!-- Popups -->
     
     <script src="./js/setup.js"></script>
+    <script src="./js/status.js"></script>
 </body>
 
 </html>

@@ -182,8 +182,11 @@ option {
     margin: 10px;
 }
 
-.dialog-button {
+.min-button, .dialog-button {
     min-width: 110px;
+}
+
+.dialog-button {
     margin-left: 5px;
     float: right;
 }
@@ -235,6 +238,11 @@ option {
 }
 
 /* === Label sizes === */
+.huge {
+    font-size: 35pt;
+    font-weight: bold;
+}
+
 .big {
     font-size: 24pt;
     font-weight: bold;
@@ -307,7 +315,6 @@ option {
 }
 
 .tab-button {
-    
     float: left;
     min-width: 110px;
     border-style: none solid none none;
