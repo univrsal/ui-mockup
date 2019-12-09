@@ -122,3 +122,9 @@ var options = {
 };
 
 var tl = new vis.Timeline(container, items, options);
+
+/* sortable */
+new Sortable(document.getElementById('sortable1', {
+    animation: 150,
+    ghostClass: 'sortable-ghost'
+}));

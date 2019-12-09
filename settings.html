@@ -25,6 +25,7 @@
     <title>Mockup</title>
     <link rel="stylesheet" href="./css/vis.min.css">
     <script src="./js/vis.min.js"></script>
+    <script src="./js/Sortable.min.js"></script>
     <link rel="stylesheet" href="./css/window.css">
     <link rel="stylesheet" href="./css/controls.css">
     <link rel="stylesheet" href="./css/settings.css">
@@ -252,9 +253,6 @@
                     </button>
                 </div>
             </div>
-            <div class="modify-box">
-   
-            </div>
             
             <div class="spacer"></div>
             <label class="medium">Weitere Optionen</label>
@@ -279,10 +277,24 @@
             <p class="label medium">
                 Pausenablauf
             </p>
-            <select size="6">
-                <option>50 Minuten Arbeitsphase</option>
-                <option>10 Minuten Pause</option>
-            </select>
+            <div class="spacer-tiny"></div>
+            <p class="label">Verwenden Sie Drag & Drop um die Reihenfolge von Einträgen zu verändern</p>
+            <div class="spacer-tiny"></div>
+            <div class="control-container">
+                
+                <ul class="sortable" id="sortable1">
+                    <li class="work-item"><p class="label">50 Minuten Arbeitsphase</p> <img class="delete-icon" src="./img/x2.svg"></li>
+                    <li class="break-item"><p class="label">10 Minuten Pause</p> <img class="delete-icon" src="./img/x2.svg"></li>
+                </ul>
+                <div class="">
+                    <button id="skip" class="button control-element fullInput" onClick="">
+                        <p class="label">Arbeitsphase Hinzufügen</p>
+                    </button>
+                    <button id="skip" class="button control-element fullInput" onClick="">
+                        <p class="label">Pause Hinzufügen</p>
+                    </button>
+                </div>
+            </div>
             <div class="spacer"></div> 
             <p class="label medium">
                 Übersicht
@@ -325,26 +337,30 @@
             </p>
             
             <!-- Selection -->
-            <div class="spacer">
-                <div class="listCenter">
-                    <div class="buttonList">
-                        <button id="ms" class="button" onClick="open_dialog('serviceLoginDialog', 'Microsoft')">
-                            <img class="buttonIconSmall" src="./img/ms.svg">
-                            <p class="label medium ">Microsoft</p>
-                        </button>
-                        
-                        <button id="google" class="button" onClick="open_dialog('serviceLoginDialog', 'Google')">
-                            <img class="buttonIconSmall" src="./img/g.svg">
-                            <p class="label medium">Google</p>
-                        </button>
-                        
-                        <button id="nc" class="button" onClick="open_dialog('serviceLoginDialog', 'Nextcloud')">
-                            <img class="buttonIconSmall" src="./img/nc.svg">
-                            <p class="label medium">Nextcloud</p>
-                        </button>
-                    </div>
+            <div class="spacer"></div>
+            <div class="listCenter">
+                <div class="buttonList">
+                    <button id="ms" class="button" onClick="open_dialog('serviceLoginDialog', 'Microsoft')">
+                        <img class="buttonIconSmall" src="./img/ms.svg">
+                        <p class="label medium ">Microsoft</p>
+                    </button>
+                    
+                    <button id="google" class="button" onClick="open_dialog('serviceLoginDialog', 'Google')">
+                        <img class="buttonIconSmall" src="./img/g.svg">
+                        <p class="label medium">Google</p>
+                    </button>
+                    
+                    <button id="nc" class="button" onClick="open_dialog('serviceLoginDialog', 'Nextcloud')">
+                        <img class="buttonIconSmall" src="./img/nc.svg">
+                        <p class="label medium">Nextcloud</p>
+                    </button>
                 </div>
             </div>
+            <div class="spacer"></div>
+            
+            <p class="label medium">
+                Notizen und Termine mit Erinnerungen werden automatisch in der Pause vor Terminstart angezeigt.
+            </p>
         </div>
         
         <!-- About -->

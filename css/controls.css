@@ -37,6 +37,10 @@ p {
     margin-top: 10px;
 }
 
+.spacer-tiny {
+    margin-top: 5px;
+}
+
 /* === Input stuff === */
 
 .textbox {
@@ -137,7 +141,7 @@ button.disabled {
                                   supported by Chrome, Opera and Firefox */
 }
 
-select {
+select, .sortable {
     border-style: solid none none none;
     border-color: #ffffff33 white black white;
     border-width: 1px;
@@ -374,6 +378,7 @@ option {
     font-weight: bold;
     margin-top: 5px;
     margin-bottom: 5px;
+    height: 15px;
     width: 60px;
     float: left;
 }
@@ -385,6 +390,7 @@ option {
 }
 
 .spinbox-up {
+    outline: none;
     cursor: pointer;
     display: block;
     width: 20px;
@@ -402,6 +408,7 @@ option {
 }
 
 .spinbox-down {
+    outline: none;
     cursor: pointer;
     display: block;
     width: 20px;
@@ -438,6 +445,10 @@ option {
         top: 0px;
         left: -10px;
     }
+
+    .spinbox-up, .spinbox-down {
+        outline: auto;
+    }
 }
 
 div.inline, p.inline { float:left; }
@@ -472,4 +483,44 @@ div.inline, p.inline { float:left; }
 .upcoming {
     background-color: #febb40;
     border-color: #995712ff;
+}
+
+/* List */
+.sortable {
+    height: 90px;
+    width: 100%;
+    list-style: none;
+    padding: 0px;
+    margin-right: 5px;
+    overflow: auto;
+}
+
+.sortable > li {
+    padding: 2px 3px 1px 3px;
+}
+
+.sortable > li:hover {
+    background-color: gray;
+}
+
+.sortable > li:hover > .delete-icon {
+    display: block;
+}
+
+.sortable-ghost {
+    background-color: #1768e4;
+}
+
+.delete-icon:hover {
+    display: block;
+}
+
+.delete-icon {
+    display: none;
+    float: right;
+    margin-top: -15px;
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+    transition:all .3s ease-in;
 }
