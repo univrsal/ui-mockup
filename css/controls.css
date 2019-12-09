@@ -98,12 +98,9 @@ a {
     animation-duration: 0.5s;
 }
 
-.disabled + button {
-    color: gray;
-}
-
-#group-options .disabled {
-    color: gray;
+button.disabled {
+    color: rgb(51, 51, 51);
+    background-color: rgb(53, 53, 53);
 }
 
 @keyframes disable{
@@ -242,7 +239,7 @@ option {
     padding: 10px;
 }
 
-.control-button {
+.control-element {
     margin-top: 5px;
     margin-left: 1px;
     margin-bottom: 5px;

@@ -106,7 +106,7 @@
                 <span class="rdo"></span>
                 <span>Nichts ändern</span>
             </label>
-
+            
             <div class="spacer-small"></div> 
             <label for="cbk-fullscreen">
                 <input type="checkbox" id="cbk-fullscreen" onclick="" checked>
@@ -117,7 +117,7 @@
                 </span>
                 <span>Bei Verwendung von Vollbildanwendungen pausieren</span>
             </label>
-
+            
             <!-- time controls -->
             <div class="spacer"></div>
             <p class="label medium">Zeiteinschränkungen</p>
@@ -224,23 +224,41 @@
         <!-- Groups -->
         <div class="page" id="page2" style="display: none;">
             <p class="label medium">
+                Nutzer Konto
+            </p>
+            <div id="login-form" class="control-container">
+                <input id="usernameText" type="text" value="nutzer@domain.tld" class="textbox cell" placeholder="E-Mail Adresse">
+                <button id="register" class="button control-element" onClick="logout()">
+                    <p class="label">Abmelden</p>
+                </button>
+            </div>
+            <div class="spacer"></div>
+            
+            <p class="label medium">
                 Beigetretene Gruppen
             </p>
-            <select size="6">
-                <option>Gruppe1</option>
-                <option>Gruppe2</option>
-            </select>
+            
+            <div class="control-container">
+                <select size="5" class="cell">
+                    <option>Gruppe1#3404</option>
+                    <option>Gruppe2#8320</option>
+                </select>
+                <div class="">
+                    <button id="skip" class="button control-element fullInput" onClick="">
+                        <p class="label">Ausgewählte Gruppe verlassen</p>
+                    </button>
+                    <button id="skip" class="button control-element fullInput" onClick="">
+                        <p class="label">Ausgewählte Gruppe bearbeiten</p>
+                    </button>
+                </div>
+            </div>
             <div class="modify-box">
-                <button id="skip" class="button" onClick="">
-                    <p class="label">Ausgewählte Gruppe verlassen</p>
-                </button>
-                <button id="skip" class="button" onClick="">
-                    <p class="label">Ausgewählte Gruppe bearbeiten</p>
-                </button>
+   
             </div>
             
             <div class="spacer"></div>
             <label class="medium">Weitere Optionen</label>
+            
             <div class="listCenter">
                 <div class="buttonList">
                     <button id="add" class="button" onClick="open_dialog('makeGroupDialog')">
@@ -300,13 +318,14 @@
         
         <!-- Integration -->
         <div class="page" id="page4" style="display: none;">
+            
             <p class="label medium">
                 Klicken Sie auf einen der Dienste, um sich ein oder auszuloggen oder
                 festzulegen, welche Daten importiert werden sollen.
             </p>
             
             <!-- Selection -->
-            <div class="selection">
+            <div class="spacer">
                 <div class="listCenter">
                     <div class="buttonList">
                         <button id="ms" class="button" onClick="open_dialog('serviceLoginDialog', 'Microsoft')">
@@ -350,7 +369,7 @@
             </p>
         </div>
         
-        <!-- Skip button -->
+        <!-- button box -->
         <div class="buttonbox">
             <button id="skip" class="button dialog-button" onClick="">
                 <p class="label">OK</p>
@@ -378,8 +397,8 @@
             </div>
             
             <div class="spacer"></div>
-            <input id="serviceEmail" type="text" class="textbox fullInput" placeholder="E-Mail Adresse">
-            <input id="servicePassword" type="password" class="textbox fullInput" placeholder="Passwort">
+            <input id="serviceEmail" type="text" value="nutzer@domain.tld" class="textbox fullInput" placeholder="E-Mail Adresse">
+            <input id="servicePassword" type="password" value="1234567890abdefghijklmno" class="textbox fullInput" placeholder="Passwort">
             
             <div class="spacer"></div>
             <p class="label">Importiere</p>
@@ -387,7 +406,7 @@
             
             <div class="multi-select">
                 <label for="cbk20">
-                    <input type="checkbox" id="cbk20">
+                    <input type="checkbox" id="cbk20" checked>
                     <span class="cbx">
                         <svg width="12px" height="11px" viewBox="0 0 12 11">
                             <polyline points="0.75 4.721 3.375 7.5 8.25 0.75"></polyline>
@@ -396,7 +415,7 @@
                     <span>Kontakte</span>
                 </label>
                 <label for="cbk21">
-                    <input type="checkbox" id="cbk21">
+                    <input type="checkbox" id="cbk21" checked>
                     <span class="cbx">
                         <svg width="12px" height="11px" viewBox="0 0 12 11">
                             <polyline points="0.75 4.721 3.375 7.5 8.25 0.75"></polyline>
@@ -405,7 +424,7 @@
                     <span>Notizen</span>
                 </label>
                 <label for="cbk22">
-                    <input type="checkbox" id="cbk22">
+                    <input type="checkbox" id="cbk22" checked>
                     <span class="cbx">
                         <svg width="12px" height="11px" viewBox="0 0 12 11">
                             <polyline points="0.75 4.721 3.375 7.5 8.25 0.75"></polyline>
@@ -418,6 +437,9 @@
             <div class="buttonbox">
                 <button id="close-service-dialog" class="button dialog-button" onClick="close_dialog('serviceLoginDialog')">
                     <p class="label">OK</p>
+                </button>
+                <button id="login-service" class="button dialog-button" onClick="close_dialog('serviceLoginDialog')">
+                    <p class="label">Abmelden</p>
                 </button>
             </div>
         </div>
@@ -439,8 +461,8 @@
             
             <p class="label">Hinzufügen</p>
             <div class="control-container">
-                <input id="addMemberText" type="text" class="textbox cell" placeholder="Teilnehmer">
-                <button id="skip" class="button control-button" onClick="">
+                <input id="addMemberText" type="text" class="textbox cell" placeholder="Teilnehmer E-Mail Adresse">
+                <button id="skip" class="button control-element" onClick="">
                     <p class="label">+</p>
                 </button>
             </div>
@@ -449,8 +471,8 @@
             
             <p class="label">Teilnehmer</p>
             <select size="6">
-                <option>Rainer Vansinn</option>
-                <option>Gabe Newell</option>
+                <option>rainer.vansinn@domain.tld</option>
+                <option>gaben@valvesoftware.com</option>
             </select>
             <div class="modify-box">
                 <button id="skip" class="button" onClick="">
@@ -479,18 +501,6 @@
             
             <input id="joinGroupText" type="text" class="textbox fullInput" placeholder="Gruppenname">
             
-            <div class="spacer-small"></div>
-            
-            <p class="label">Beigetretenen Gruppen</p>
-            <select size="6">
-                <option>Gruppe1</option>
-                <option>Gruppe2</option>
-            </select>
-            <div class="modify-box">
-                <button id="skip" class="button" onClick="">
-                    <p class="label">Ausgewählte Gruppe verlassen</p>
-                </button>
-            </div>
             <div class="buttonbox">
                 <button id="close-join-dialog" class="button dialog-button" onClick="close_dialog('joinGroupDialog', handle_join)">
                     <p class="label">OK</p>

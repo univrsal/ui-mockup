@@ -95,9 +95,9 @@
                         Zur verwendung müssen Sie sich zuerst mit Ihrer E-Mail Adresse einloggen oder registrieren:
                     </p>
                     <div class="spacer"></div>
-                    <div class="control-container">
+                    <div id="login-form" class="control-container">
                         <input id="usernameText" type="text" class="textbox cell" placeholder="E-Mail Adresse">
-                        <button id="register" class="button control-button" onClick="enable_options('group-options')">
+                        <button id="register" class="button control-element" onClick="login()">
                             <p class="label">Anmelden</p>
                         </button>
                     </div>
@@ -223,8 +223,8 @@
             
             <p class="label">Hinzufügen</p>
             <div class="control-container">
-                <input id="addMemberText" type="text" class="textbox cell" placeholder="Teilnehmer">
-                <button id="skip" class="button control-button" onClick="">
+                <input id="addMemberText" type="text" class="textbox cell" placeholder="Teilnehmer E-Mail Adresse">
+                <button id="skip" class="button control-element" onClick="">
                     <p class="label">+</p>
                 </button>
             </div>
@@ -267,8 +267,8 @@
             
             <p class="label">Beigetretenen Gruppen</p>
             <select size="6">
-                <option>Gruppe1</option>
-                <option>Gruppe2</option>
+                <option>Gruppe1#3404</option>
+                <option>Gruppe2#8320</option>
             </select>
             <div class="modify-box">
                 <button id="skip" class="button" onClick="">
@@ -335,6 +335,9 @@
             <div class="buttonbox">
                 <button id="close-service-dialog" class="button dialog-button" onClick="close_dialog('serviceLoginDialog')">
                     <p class="label">OK</p>
+                </button>
+                <button id="login-service" class="button dialog-button" onClick="close_dialog('serviceLoginDialog')">
+                    <p class="label">Anmelden</p>
                 </button>
             </div>
         </div>

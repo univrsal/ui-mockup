@@ -29,14 +29,39 @@ var pages = {
     END: 4,
 };
 
-function enable_options(target)
+function validateEmail(email)
+{
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+}
+
+function toggle_controls(target, state)
 {
     var options = document.getElementById(target);
     var children = options.children;
-    
-    for (var i = 0; i < children.length; i++)  {
-        children[i].classList.remove('disabled');
-        children[i].classList.add('enabled');
+
+    if (state) {
+        for (var i = 0; i < children.length; i++)  {
+            children[i].classList.remove('disabled');
+            children[i].classList.add('enabled');
+        }
+    } else {
+        for (var i = 0; i < children.length; i++)  {
+            children[i].classList.remove('enabled');
+            children[i].classList.add('disabled');
+        }
+    }
+}
+
+function login()
+{
+    var txt = document.getElementById('usernameText').value;
+
+    if (validateEmail(txt)) {
+        alert('Sie sollten jetzt eine Nachricht in Ihrem Postfach zur bestätigung der Registrierung erhalten haben');
+        toggle_controls('group-options', true);
+    } else {
+        alert('Bitte geben Sie einge gültige E-Mail Adresse ein!');
     }
 }
 
@@ -135,7 +160,7 @@ function open_dialog(id, title)
 {
     var d = document.getElementById(id);
     if (title !== undefined ) {
-        document.getElementById('serviceTitle').textContent = 'Mit ' + title + ' Konto einloggen';
+        document.getElementById('serviceTitle').textContent = title + ' Konto integration';
     }
     
     if (d !== null) {
