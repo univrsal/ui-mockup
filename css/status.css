@@ -17,6 +17,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *************************************************************************/
 
+
 .divider {
     margin-left: 8px;
     margin-right: 8px;
@@ -36,8 +37,9 @@
 }
 
 .left, .right {
-    width:  200px;
+    width:  240px;
 }
+
 .outer {
   display: table;
   position: absolute;

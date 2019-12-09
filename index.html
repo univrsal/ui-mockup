@@ -1,20 +1,20 @@
 <!--
-   index.html is part of ui-mockup
-   created on Tuesday, 3rd December 2019 18:19:50
-   github.com/univrsal/ui-mockup
-   Copyright 2019 univrsal (universailp@web.de)
-  
-   This program is free software: you can redistribute it and/or modify
-   it under the terms of the GNU General Public License as published by
-   the Free Software Foundation, version 3 of the License.
-  
-   This program is distributed in the hope that it will be useful,
-   but WITHOUT ANY WARRANTY; without even the implied warranty of
-   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-   GNU General Public License for more details.
-  
-   You should have received a copy of the GNU General Public License
-   along with this program.  If not, see <http://www.gnu.org/licenses/>.
+    index.html is part of ui-mockup
+    created on Tuesday, 3rd December 2019 18:19:50
+    github.com/univrsal/ui-mockup
+    Copyright 2019 univrsal (universailp@web.de)
+    
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, version 3 of the License.
+    
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+    
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
 
 <!DOCTYPE html>
@@ -91,19 +91,28 @@
                     <p class="label medium">
                         ScreenBreak gibt Ihnen die Möglichkeit sich mit Arbeitskollegen in Gruppen zu finden, um Pausen abzustimmen.<br> <br> Falls Sie diese Option nutzen möchten, können Sie jetzt einer Gruppe beitreten oder eine neue erstellen. Diese
                         Option steht auch später in den Einstellungen zur Verfügung.
+                        <br><br>
+                        Zur verwendung müssen Sie sich zuerst mit Ihrer E-Mail Adresse einloggen oder registrieren:
                     </p>
+                    <div class="spacer"></div>
+                    <div class="control-container">
+                        <input id="usernameText" type="text" class="textbox cell" placeholder="E-Mail Adresse">
+                        <button id="register" class="button control-button" onClick="enable_options('group-options')">
+                            <p class="label">Anmelden</p>
+                        </button>
+                    </div>
                 </div>
                 
                 <!-- Selection -->
-                <div class="selection">
+                <div class="selection-small">
                     <div class="listCenter">
-                        <div class="buttonList">
-                            <button id="add" class="button" onClick="open_dialog('makeGroupDialog')">
+                        <div id="group-options" class="buttonList">
+                            <button id="add" class="button disabled" onClick="open_dialog('makeGroupDialog')">
                                 <img class="buttonIcon" src="./img/plus.svg">
                                 <p class="label medium ">Erstellen</p>
                             </button>
                             
-                            <button id="join" class="button" onClick="open_dialog('joinGroupDialog')">
+                            <button id="join" class="button disabled" onClick="open_dialog('joinGroupDialog')">
                                 <img class="buttonIcon " src="./img/door.svg">
                                 <p class="label medium">Beitreten</p>
                             </button>

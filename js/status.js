@@ -54,9 +54,9 @@ function setup()
         }
         next = 'Nächste Pause um ' + h + ':50';
         var left = 50 - time.getMinutes();
-        var unit = 'Minuten';
+        var unit = left > 1 ? 'Minuten' : 'Minute';
 
-        if (left < 3) {
+        if (left < 2) {
             left *= 60;
             left -= time.getSeconds();
             unit = left > 1 ? 'Sekunden' : 'Sekunde';
@@ -65,8 +65,9 @@ function setup()
     } else if (time.getMinutes() <= 59) {
         in_break = true;
         var left = 60 - time.getMinutes();
-        var unit = 'Minuten';
-        if (left < 3) {
+        var unit = left > 1 ? 'Minuten' : 'Minute';
+
+        if (left < 2) {
             left *= 60; 
             left -= time.getSeconds();
             unit = left > 1 ? 'Sekunden' : 'Sekunde';
@@ -77,7 +78,12 @@ function setup()
         next = 'Nächste Pause um ' + (h + 1) + ':50';
     }
     document.getElementById('reminder').textContent = next;
-    document.getElementById('countdown').textContent = until;
+    if (until.length > 0) {
+        document.getElementById('countdown').textContent = until;
+        document.getElementById('countdown').style.color = 'white';
+    } else {
+        document.getElementById('countdown').style.color = 'transparent';
+    }
     setTimeout(setup, 900);
 }
 

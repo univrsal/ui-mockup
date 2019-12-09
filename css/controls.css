@@ -102,6 +102,10 @@ a {
     color: gray;
 }
 
+#group-options .disabled {
+    color: gray;
+}
+
 @keyframes disable{
     0% {
         filter: grayscale(0%);
@@ -167,6 +171,13 @@ option {
 
 .multi-select {
     margin: 5px;
+}
+
+.selection-small {
+    margin-top: px;
+    display: block;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .selection {
