@@ -1,0 +1,15 @@
+:root {
+    /* Both theme colors */
+    --theme-red: #fd5754;
+    --theme-orange: #febb40;
+    --theme-green: #34c848;
+
+    --theme-bright-red: #ff8380;
+    --theme-bright-orange: #ffcf78;
+    --theme-bright-green: #79e488;
+
+    /* Dark theme colors */
+    --dark-window-bg: #393b3d;
+    --dark-window-border: #6c6d7188 #6c6d7188 #51515588 #6c6d7188;
+    --dark-window-gradient: repeating-linear-gradient(#414446, #393b3d 4%, #393b3d 100%);
+}

@@ -16,6 +16,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *************************************************************************/
+@import url("colors.css");
 
 body {
     background-color: #464545;
@@ -40,7 +41,6 @@ html {
     overflow: hidden;
 }
 
-
 /* True drop shadow for pngs */
 
 .shadow {
@@ -48,15 +48,22 @@ html {
     filter: drop-shadow(0px 0px 5px #292828bb);
 }
 
+.dark {
+    background-color: var(--dark-window-bg);
+    background-image: var(--dark-window-gradient); 
+    border-color: var(--dark-window-border);
+}
+
+.bright {
+
+}
+
 .windowframe {
     overflow: hidden;
     padding: 8px;
     border-radius: 6px;
-    background: #393b3d;
-    background-image: repeating-linear-gradient(#414446, #393b3d 4%, #393b3d 100%);
     border-style: solid;
     border-width: 1px;
-    border-color: #6c6d7188 #6c6d7188 #51515588 #6c6d7188;
     box-shadow: 0px 0px 5px 5px #2928288f;
 }
 
@@ -69,7 +76,6 @@ html {
 .dot {
     height: 14px;
     width: 14px;
-    background-color: #bbb;
     border-radius: 50%;
     margin-right: 3px;
     display: inline-block;
@@ -77,8 +83,36 @@ html {
 }
 
 .red {
-    background-color: #fd5754;
+    background-color: var(--theme-red);
     transition: background-color 0.5s;
+}
+
+.red:hover {
+    background-color: var(--theme-bright-red);
+    background-image: url("../img/x.svg");
+    background-size: 14px;
+}
+
+.orange {
+    background-color: var(--theme-orange);
+    transition: background-color 0.5s;
+}
+
+.orange:hover {
+    background-color: var(--theme-bright-orange);
+    background-image: url("../img/min.svg");
+    background-size: 14px;
+}
+
+.green {
+    background-color: var(--theme-green);
+    transition: background-color 0.5s;
+}
+
+.green:hover {
+    background-color: var(--theme-bright-green);
+    background-image: url("../img/max.svg");
+    background-size: 14px;
 }
 
 #resize {
@@ -93,33 +127,6 @@ html {
     z-index: -1;
 }
 
-.red:hover {
-    background-color: #ff8380;
-    background-image: url("../img/x.svg");
-    background-size: 14px;
-}
-
-.orange {
-    background-color: #febb40;
-    transition: background-color 0.5s;
-}
-
-.orange:hover {
-    background-color: #ffcf78;
-    background-image: url("../img/min.svg");
-    background-size: 14px;
-}
-
-.green {
-    background-color: #34c848;
-    transition: background-color 0.5s;
-}
-
-.green:hover {
-    background-color: #79e488;
-    background-image: url("../img/max.svg");
-    background-size: 14px;
-}
 
 .windowcontrols {
     float: left;

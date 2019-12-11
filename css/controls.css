@@ -445,10 +445,6 @@ option {
         top: 0px;
         left: -10px;
     }
-
-    .spinbox-up, .spinbox-down {
-        outline: auto;
-    }
 }
 
 div.inline, p.inline { float:left; }

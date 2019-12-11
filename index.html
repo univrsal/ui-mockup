@@ -23,6 +23,7 @@
 
 <head>
     <title>Mockup</title>
+    <link rel="stylesheet" href="./css/colors.css">
     <link rel="stylesheet" href="./css/window.css">
     <link rel="stylesheet" href="./css/controls.css">
     <link rel="stylesheet" href="./css/setup.css">
@@ -36,7 +37,7 @@
 <body onmouseup="stop_drag(event)" onmousemove="drag(event)">
     <div id="bg-image"></div>
     
-    <div id="main" class="windowframe center setup">
+    <div id="main" class="windowframe center setup dark">
         <!-- Basic title bar -->
         <div class="titlebar">
             <div class="windowcontrols noselect">
@@ -176,7 +177,7 @@
                 <div class="selection">
                     <div class="listCenter">
                         <div class="buttonList">
-                            <button id="ms" class="button">
+                            <button id="ms" class="button" onclick="window.location.href = './status.html';">
                                 <img class="buttonIconSmall" src="./img/timer.svg">
                                 <p class="label medium ">ScreenBreak starten</p>
                             </button>
