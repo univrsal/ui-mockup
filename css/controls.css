@@ -17,6 +17,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *************************************************************************/
 
+ @import url("colors.css");
+
 /* Custom password font */
 @font-face {
     font-family: 'pass';
@@ -43,14 +45,23 @@ p {
 
 /* === Input stuff === */
 
+.dark .textbox {
+    background: var(--dark-control);
+    border-color: var(--dark-control-border);
+    color: var(--dark-textbox);
+}
+
+.bright .textbox {
+    background: var(--bright-control);
+    border-color: var(--bright-control-border);
+    color: var(--bright-textbox);
+}
+
 .textbox {
     padding: 6px 10px 5px 10px;
     border-radius: 3px;
-    background: #6c6d71;
     border-style: solid none none none;
-    border-color: #ffffff33 white black white;
     border-width: 1px;
-    color: white;
     margin-top: 5px;
     margin-bottom: 5px;
 }
@@ -65,14 +76,24 @@ input[type=checkbox] {
     background: #393b3d;
    
 }
+
 ::placeholder {
     color: #a1a4ac;
     opacity: 1;
 }
 
+.bright .label,
+.bright .button, .bright option, .bright #visualization div {
+    color: var(--bright-text);
+}
+
+.dark .label,
+.dark .button, .dark option, .dark #visualization div {
+    color: var(--dark-text);
+}
+
 .label,
 .button, option, #visualization div {
-    color: white;
     font-family: "Arial", Times, serif;
     font-size: 11pt;
 }
@@ -102,9 +123,14 @@ a {
     animation-duration: 0.5s;
 }
 
-button.disabled {
-    color: rgb(51, 51, 51);
-    background-color: rgb(53, 53, 53);
+.dark button.disabled {
+    color: var(--bright-text-disabled);
+    background-color: var(--bright-disabled);
+}
+
+.dark button.disabled {
+    color: var(--dark-text-disabled);
+    background-color: var(--dark-disabled);
 }
 
 @keyframes disable{
@@ -207,19 +233,31 @@ option {
     cursor: pointer;
 }
 
+.dark .button, .dark .tab-button {
+    background: var(--dark-control);
+    border-color: var(--dark-control-border);
+}
+
+.bright .button, .bright .tab-button {
+    background: var(--bright-control);
+    border-color: var(--bright-control-border);
+}
+
 .button, .tab-button {
     padding: 5px 10px 5px 10px;
     border-radius: 3px;
-    background: #6c6d71;
     cursor: pointer;
-    border-style: solid none none none;
-    border-color: #ffffff33 white black white;
+    border-style: solid none solid none;
     border-width: 1px;
     transition: background 0.5s;
 }
 
-.button:hover, .tab-button:hover {
-    background: #8c8d91;
+.dark .button:hover, .dark .tab-button:hover {
+    background: var(--dark-control-hover);
+}
+
+.bright .button:hover, .bright .tab-button:hover {
+    background: var(--bright-control-hover);
 }
 
 .buttonbox {
@@ -231,6 +269,10 @@ option {
 
 .buttonList {
     display: inline-block;
+}
+
+.bright .buttonIcon, .bright .buttonIconSmall {
+    filter: invert(90%);
 }
 
 .buttonIcon {

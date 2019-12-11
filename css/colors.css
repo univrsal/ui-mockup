@@ -1,3 +1,22 @@
+/*************************************************************************
+ * colors.css is part of ui-mockup
+ * created on Saturday, 11th December 2019 20:44:26
+ * github.com/univrsal/ui-mockup
+ * Copyright 2019 univrsal (universailp@web.de)
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, version 3 of the License.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *************************************************************************/
+
 :root {
     /* Both theme colors */
     --theme-red: #fd5754;
@@ -12,4 +31,24 @@
     --dark-window-bg: #393b3d;
     --dark-window-border: #6c6d7188 #6c6d7188 #51515588 #6c6d7188;
     --dark-window-gradient: repeating-linear-gradient(#414446, #393b3d 4%, #393b3d 100%);
+    --dark-text: white;
+    --dark-shadow: drop-shadow(0px 0px 5px #292828bb);
+    --dark-disabled:rgb(53, 53, 53);
+    --dark-text-disabled:rgb(78, 78, 78);
+    --dark-textbox: white;
+    --dark-control: #6c6d71;
+    --dark-control-border: #ffffff33 white black white;
+    --dark-control-hover: #8c8d91;
+
+    /* Bright */
+    --bright-window-border: #e6e6e688 #d3d3d388 #51515588 #6c6d7188;
+    --bright-window-gradient: repeating-linear-gradient(#efefef, #e4e4e4 4%, #e4e4e4 100%);
+    --bright-text: rgb(29, 29, 29);
+    --bright-shadow: drop-shadow(0px 0px 5px #aaaaaabb);
+    --bright-disabled:rgb(119, 119, 119);
+    --bright-text-disabled:rgb(78, 78, 78);
+    --bright-textbox: black;
+    --bright-control-border: white #00000000 rgba(128, 128, 128, 0.616);
+    --bright-control: #fcfcfc;
+    --bright-control-hover: #d3cdcd;
 }

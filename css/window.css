@@ -16,7 +16,8 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *************************************************************************/
-@import url("colors.css");
+
+ @import url("colors.css");
 
 body {
     background-color: #464545;
@@ -29,9 +30,16 @@ html {
     margin: -10px;
 }
 
-#bg-image {
+.bright #bg-image {
+    background-image: url("../img/day.jpg");
+}
+
+.dark #bg-image {
     /* The image used */
     background-image: url("../img/night.jpg");
+}
+
+#bg-image {
     /* Full height */
     height: 100%;
     /* Center and scale the image nicely */
@@ -43,19 +51,24 @@ html {
 
 /* True drop shadow for pngs */
 
-.shadow {
-    -webkit-filter: drop-shadow(0px 0px 5px #292828bb);
-    filter: drop-shadow(0px 0px 5px #292828bb);
+.dark .shadow {
+    filter: var(--dark-shadow);
 }
 
-.dark {
+.bright .shadow {
+    filter: var(--bright-shadow);
+}
+
+.dark .windowframe {
     background-color: var(--dark-window-bg);
     background-image: var(--dark-window-gradient); 
     border-color: var(--dark-window-border);
 }
 
-.bright {
-
+.bright .windowframe {
+    background-color: var(--bright-window-bg);
+    background-image: var(--bright-window-gradient); 
+    border-color: var(--bright-window-border);
 }
 
 .windowframe {
@@ -64,13 +77,13 @@ html {
     border-radius: 6px;
     border-style: solid;
     border-width: 1px;
-    box-shadow: 0px 0px 5px 5px #2928288f;
+    box-shadow: 0px 0px 5px 5px #29282850;
 }
 
 .dot-icon {
     width: 18px;
     height: 18px;
-    margin-left: -23px;
+    margin-left: -22px;
 }
 
 .dot {
@@ -126,7 +139,6 @@ html {
     cursor: nwse-resize;
     z-index: -1;
 }
-
 
 .windowcontrols {
     float: left;
