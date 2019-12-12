@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="./css/vis.min.css">
     <script src="./js/vis.min.js"></script>
     <script src="./js/Sortable.min.js"></script>
+    <link rel="stylesheet" href="./css/colors.css">
     <link rel="stylesheet" href="./css/window.css">
     <link rel="stylesheet" href="./css/controls.css">
     <link rel="stylesheet" href="./css/settings.css">
@@ -36,7 +37,7 @@
     <link rel="shortcut icon" type="image/png" href="img/icon.png">
 </head>
 
-<body onmouseup="stop_drag(event)" onmousemove="drag(event)">
+<body class="dark" onmouseup="stop_drag(event)" onmousemove="drag(event)">
     <div id="bg-image"></div>
     
     <div id="main" class="windowframe center settings">
@@ -234,7 +235,6 @@
                 </button>
             </div>
             <div class="spacer"></div>
-            
             <p class="label medium">
                 Beigetretene Gruppen
             </p>
@@ -255,7 +255,7 @@
             </div>
             
             <div class="spacer"></div>
-            <label class="medium">Weitere Optionen</label>
+            <p class="label medium">Weitere Optionen</p>
             
             <div class="listCenter">
                 <div class="buttonList">

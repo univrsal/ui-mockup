@@ -16,6 +16,13 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *************************************************************************/
+ @import url("colors.css");
+
+.dark .cbx {
+    background-color: var(--dark-control-gradient-bottom);
+    background-image: var(--dark-control-gradient);
+    box-shadow: var(--dark-control-inset);
+}
 
 .cbx {
     position: relative;
@@ -24,9 +31,6 @@
     width: 15px;
     height: 15px;
     border-radius: 4px;
-    background-color: #606062;
-    background-image: linear-gradient(#474749, #606062);
-    box-shadow: inset 0 1px 1px rgba(255,255,255,0.15), inset 0 -1px 1px rgba(0,0,0,0.15);
     transition: all 0.15s ease;
 }
 
@@ -37,11 +41,17 @@
     fill: none;
     stroke-linecap: round;
     stroke-linejoin: round;
-    stroke: #fff;
+    stroke: var(--theme-stroke);
     stroke-width: 2;
     stroke-dasharray: 17;
     stroke-dashoffset: 17;
     transform: translate3d(0, 0, 0);
+}
+
+.dark .rdo {
+    background-color: var(--dark-control-gradient-bottom);
+    background-image: var(--dark-control-gradient);
+    box-shadow: var(--dark-control-inset);
 }
 
 .rdo {
@@ -51,10 +61,11 @@
     width: 15px;
     height: 15px;
     border-radius: 10px;
-    background-color: #606062;
-    background-image: linear-gradient(#474749, #606062);
-    box-shadow: inset 0 1px 1px rgba(255,255,255,0.15), inset 0 -1px 1px rgba(0,0,0,0.15);
     transition: all 0.15s ease;
+}
+
+.dark .rdo:after {
+    background: var(--theme-stroke);
 }
 
 .rdo:after {
@@ -66,7 +77,6 @@
     width: 5px;
     height: 5px;
     border-radius: 50%;
-    background: #fff;
     opacity: 0;
     transform: scale(0);
 }
@@ -83,18 +93,21 @@ input[type="radio"] {
     opacity: 0;
 }
 
+.dark label {
+    color: var(--dark-text);
+}
+
 label {
     display: inline-block;
     font-size: 11pt;
     cursor: pointer;
-    color: white;
     font-family: "Arial", Times, serif;
     margin-right: 8px;
 }
 
-input[type="radio"]:checked + .rdo {
-    background-color: #606062;
-    background-image: linear-gradient(#255cd2, #1d52c1);
+.dark input[type="radio"]:checked + .rdo {
+    background-color: var(--dark-control-gradient-bottom);
+    background: linear-gradient(var(--theme-accent), var(--theme-accent));
 }
 
 input[type="radio"]:checked + .rdo:after {
@@ -103,9 +116,12 @@ input[type="radio"]:checked + .rdo:after {
     transition: all 0.25s ease;
 }
 
+.dark input[type="checkbox"]:checked + .cbx {
+    background-color: var(--dark-control-gradient-bottom);
+}
+
 input[type="checkbox"]:checked + .cbx {
-    background-color: #606062;
-    background-image: linear-gradient(#255cd2, #1d52c1);
+    background-image: linear-gradient(var(--theme-accent), var(--theme-accent));
 }
 
 input[type="checkbox"]:checked + .cbx svg {
@@ -119,6 +135,7 @@ input[type="checkbox"]:checked + .cbx svg {
     padding: 5px;;
 }
 
+/* unused */
 .tooltip .tooltip-text {
     visibility: hidden;
     width: 120px;

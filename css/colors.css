@@ -20,12 +20,28 @@
 :root {
     /* Both theme colors */
     --theme-red: #fd5754;
+    --theme-dark-red: #7f0508;
     --theme-orange: #febb40;
+    --theme-dark-orange: #995712;
     --theme-green: #34c848;
+    --theme-dark-green: #0b650d;
 
     --theme-bright-red: #ff8380;
     --theme-bright-orange: #ffcf78;
     --theme-bright-green: #79e488;
+    
+    --theme-stroke: white;
+    --theme-item-selected: gray;
+
+    --theme-accent: #1768e4; 
+    --theme-accent-dark: #1d52c1;
+    --theme-accent-bright: #3863c0; 
+    --theme-accent-hovered: #3d82ea; 
+    
+    --theme-spinbox-gradient: linear-gradient(var(--theme-accent-hovered),
+        var(--theme-accent));
+    --theme-spinbox-gradient-hovered: linear-gradient(var(--theme-accent-hovered),
+        var(--theme-accent-bright));
 
     /* Dark theme colors */
     --dark-window-bg: #393b3d;
@@ -37,8 +53,19 @@
     --dark-text-disabled:rgb(78, 78, 78);
     --dark-textbox: white;
     --dark-control: #6c6d71;
-    --dark-control-border: #ffffff33 white black white;
+    --dark-tab-button: #717274;
+    --dark-border: #ffffff3d;
+    --dark-tab-left-border: #ffffff3d #3d3d3d44 #0000005b;
+    --dark-tab-right-border: #ffffff3d transparent #0000005b;
+    --dark-control-border: #ffffff33 transparent rgb(46, 46, 46) transparent;
     --dark-control-hover: #8c8d91;
+    --dark-link: #7da6ff;
+    /* Check box & Radio buttons */
+    --dark-control-gradient-top: #474749;
+    --dark-control-gradient-bottom: #606062;
+    --dark-control-gradient: linear-gradient(var(--dark-control-gradient-top),
+       var(--dark-control-gradient-bottom));
+    --dark-control-inset: inset 0 1px 1px rgba(255,255,255,0.15), inset 0 -1px 1px rgba(0,0,0,0.15);
 
     /* Bright */
     --bright-window-border: #e6e6e688 #d3d3d388 #51515588 #6c6d7188;
