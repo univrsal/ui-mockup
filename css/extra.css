@@ -18,6 +18,12 @@
  *************************************************************************/
  @import url("colors.css");
 
+.bright .cbx {
+    background-color: var(--bright-control-gradient-bottom);
+    background-image: var(--bright-control-gradient);
+    box-shadow: var(--bright-control-inset);
+}
+
 .dark .cbx {
     background-color: var(--dark-control-gradient-bottom);
     background-image: var(--dark-control-gradient);
@@ -48,6 +54,12 @@
     transform: translate3d(0, 0, 0);
 }
 
+.bright .rdo {
+    background-color: var(--bright-control-gradient-bottom);
+    background-image: var(--bright-control-gradient);
+    box-shadow: var(--bright-control-inset);
+}
+
 .dark .rdo {
     background-color: var(--dark-control-gradient-bottom);
     background-image: var(--dark-control-gradient);
@@ -64,7 +76,7 @@
     transition: all 0.15s ease;
 }
 
-.dark .rdo:after {
+.rdo:after {
     background: var(--theme-stroke);
 }
 
@@ -93,6 +105,10 @@ input[type="radio"] {
     opacity: 0;
 }
 
+.bright label {
+    color: var(--bright-text);
+}
+
 .dark label {
     color: var(--dark-text);
 }
@@ -103,6 +119,11 @@ label {
     cursor: pointer;
     font-family: "Arial", Times, serif;
     margin-right: 8px;
+}
+
+.bright input[type="radio"]:checked + .rdo {
+    background-color: var(--bright-control-gradient-bottom);
+    background: linear-gradient(var(--theme-accent), var(--theme-accent));
 }
 
 .dark input[type="radio"]:checked + .rdo {

@@ -147,15 +147,18 @@ input[type=password] {
         filter: grayscale(0%);
     }
 }
+.disabled > input[type="text"] {
+    pointer-events: none; 
+}
 
-.noselect, label, .dot, .tab-button, .listCenter, .buttonlist, .button, .label {
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Old versions of Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome, Opera and Firefox */
+.disabled > input[type="text"], .noselect, label, .dot, .tab-button, .listCenter, .buttonlist, .button, .label {
+    -webkit-touch-callout: none; /* ios safari */
+    -webkit-user-select: none; /* safari */
+     -khtml-user-select: none; /* konqueror html */
+       -moz-user-select: none; /* old versions of firefox */
+        -ms-user-select: none; /* internet explorer/edge */
+            user-select: none; /* non-prefixed version, currently
+                                  supported by chrome, opera and firefox */
 }
 
 .dark select, .dark .sortable {
@@ -274,6 +277,10 @@ option {
     filter: invert(90%);
 }
 
+.no-invert {
+    filter: invert(0%) !important;
+}
+
 .buttonIcon {
     width: 64px;
     padding: 10px;
@@ -370,6 +377,11 @@ option {
 .dark .tab-button {
     border-color:  var(--dark-tab-left-border);
     background-color: var(--dark-control);
+    color: var(--dark-text);
+}
+
+.bright .tab-button-pressed {
+    color: var(--bright-text);
 }
 
 .tab-button {
@@ -377,7 +389,6 @@ option {
     min-width: 110px;
     border-style: none solid none none;
     border-width: 1px;
-    color: var(--dark-text);
     font-size: 11pt;
     font-family: "Arial", Times, serif;
     font-weight: bold;
@@ -399,6 +410,10 @@ option {
 
 .tab-button-right {
     border-radius: 0px 5px 5px 0px;
+}
+
+.bright .tab-button-pressed {
+    color: var(--bright-control);
 }
 
 .tab-button-pressed {

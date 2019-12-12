@@ -155,7 +155,7 @@
                 
                 <p class="label spin-label inline">bis</p>
                 <div class="time-input inline disabled">
-                    <input type="text" id="time" class="spinbox" value="00:00" oninput="handle_time(event)">
+                    <input type="text" id="time2" class="spinbox" value="00:00" oninput="handle_time(event)">
                     <div class="spinbox-buttons" style="float: left;">
                         <button class="spinbox-up">
                             <svg width="20px" height="12px" viewBox="0 0 12 20">
@@ -188,7 +188,7 @@
             <div id="time-weekday" class="horizontal-options">
                 <p class="label spin-label">Von</p>
                 <div class="time-input inline disabled">
-                    <input type="text" id="time" class="spinbox" value="Samstag" oninput="">
+                    <input type="text" id="weekday" class="spinbox" value="Samstag" oninput="">
                     <div class="spinbox-buttons" style="float: left;">
                         <button class="spinbox-up">
                             <svg width="20px" height="12px" viewBox="0 0 12 20">
@@ -205,7 +205,7 @@
                 
                 <p class="label spin-label inline">bis</p>
                 <div class="time-input inline disabled">
-                    <input type="text" id="time" class="spinbox" value="Sonntag" oninput="">
+                    <input type="text" id="weekday2" class="spinbox" value="Sonntag" oninput="">
                     <div class="spinbox-buttons" style="float: left;">
                         <button class="spinbox-up">
                             <svg width="20px" height="12px" viewBox="0 0 12 20">
@@ -341,17 +341,17 @@
             <div class="listCenter">
                 <div class="buttonList">
                     <button id="ms" class="button" onClick="open_dialog('serviceLoginDialog', 'Microsoft')">
-                        <img class="buttonIconSmall" src="./img/ms.svg">
+                        <img class="buttonIconSmall no-invert" src="./img/ms.svg">
                         <p class="label medium ">Microsoft</p>
                     </button>
                     
                     <button id="google" class="button" onClick="open_dialog('serviceLoginDialog', 'Google')">
-                        <img class="buttonIconSmall" src="./img/g.svg">
+                        <img class="buttonIconSmall no-invert" src="./img/g.svg">
                         <p class="label medium">Google</p>
                     </button>
                     
                     <button id="nc" class="button" onClick="open_dialog('serviceLoginDialog', 'Nextcloud')">
-                        <img class="buttonIconSmall" src="./img/nc.svg">
+                        <img class="buttonIconSmall no-invert" src="./img/nc.svg">
                         <p class="label medium">Nextcloud</p>
                     </button>
                 </div>
