@@ -16,6 +16,8 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *************************************************************************/
+ 
+@import url("colors.css");
 
 .blurred {
     filter: blur(2px);
@@ -37,15 +39,24 @@
     transition: all 0.5s;
 }
 
+.dark .modal-window>div {
+    background: var(--dark-window-bg);
+    border-color: var(--dark-window-border);
+    background-image: var(--dark-window-gradient);
+}
+
+.bright .modal-window>div {
+    background: var(--bright-window-bg);
+    border-color: var(--bright-window-border);
+    background-image: var(--bright-window-gradient);
+}
+
 .modal-window>div {
-    border-radius: 3px;
+    border-radius: 6px;
     position: relative;
     margin: 10% auto;
     padding: 8px;
-    background: #393b3d;
-    background-image: repeating-linear-gradient(#414446, #393b3d 4%, #393b3d 100%);
     border-style: solid;
     border-width: 1px;
-    border-color: #6c6d7188 #6c6d7188 #51515588 #6c6d7188;
     /* box-shadow: 0px 0px 9px 9px #b6b5b546; */
 }

@@ -21,6 +21,19 @@ var active_tab_id = 1;
 var active_tab = document.getElementById('page1');
 var slide_block = false;
 
+function go_dark()
+{
+    var body = document.getElementById('body');
+    body.classList.remove('bright');
+    body.classList.add('dark');
+}
+
+function go_bright()
+{
+    var body = document.getElementById('body');
+    body.classList.remove('dark');
+    body.classList.add('bright');
+}
 
 function remove_class(from, name)
 {
