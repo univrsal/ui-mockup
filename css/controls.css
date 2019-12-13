@@ -448,7 +448,7 @@ option {
     font-weight: bold;
     margin-top: 5px;
     margin-bottom: 5px;
-    height: 15px;
+    height: 100%;
     width: 60px;
     float: left;
 }
