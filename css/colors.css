@@ -18,6 +18,8 @@
  *************************************************************************/
 
 :root {
+    /* misc */
+    --transition-time: 1s;
     /* Both theme colors */
     --theme-red: #fd5754;
     --theme-dark-red: #7f0508;
@@ -38,6 +40,10 @@
     --theme-accent-bright: #3863c0; 
     --theme-accent-hovered: #3d82ea; 
     
+    --theme-accept-gradient: linear-gradient(var(--theme-accent-hovered),
+        var(--theme-accent) 30%, var(--theme-accent) 100%);
+    --theme-accept-gradient-hovered: linear-gradient(var(--theme-accent-bright),
+        var(--theme-accent-hovered) 30%, var(--theme-accent-hovered) 100%);
     --theme-spinbox-gradient: linear-gradient(var(--theme-accent-hovered),
         var(--theme-accent));
     --theme-spinbox-gradient-hovered: linear-gradient(var(--theme-accent-hovered),
@@ -68,6 +74,7 @@
     --dark-control-inset: inset 0 1px 1px rgba(255,255,255,0.15), inset 0 -1px 1px rgba(0,0,0,0.15);
 
     /* Bright */
+    --bright-window-bg: #e4e4e4;
     --bright-window-border: #e6e6e688 #d3d3d388 #51515588 #6c6d7188;
     --bright-window-gradient: repeating-linear-gradient(#efefef, #e4e4e4 4%, #e4e4e4 100%);
     --bright-text: rgb(29, 29, 29);

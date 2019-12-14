@@ -1,23 +1,23 @@
 /*************************************************************************
- * window.css is part of ui-mockup
- * created on Saturday, 30th November 2019 16:11:26
- * github.com/univrsal/ui-mockup
- * Copyright 2019 univrsal (universailp@web.de)
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, version 3 of the License.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- *************************************************************************/
+* window.css is part of ui-mockup
+* created on Saturday, 30th November 2019 16:11:26
+* github.com/univrsal/ui-mockup
+* Copyright 2019 univrsal (universailp@web.de)
+*
+* This program is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, version 3 of the License.
+*
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
+*
+* You should have received a copy of the GNU General Public License
+* along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*************************************************************************/
 
- @import url("colors.css");
+@import url("colors.css");
 
 body {
     background-color: #464545;
@@ -32,11 +32,13 @@ html {
 
 .bright #bg-image {
     background-image: url("../img/day.jpg");
+    transition: background-image var(--transition-time);
 }
 
 .dark #bg-image {
     /* The image used */
     background-image: url("../img/night.jpg");
+    transition: background-image var(--transition-time);
 }
 
 #bg-image {
@@ -59,6 +61,20 @@ html {
     filter: var(--bright-shadow);
 }
 
+.darken {
+    animation: to_dark var(--transition-time); 
+}
+
+@keyframes to_dark {
+    0% {
+        background-image: var(--bright-window-gradient);
+    }
+    100% {
+        background-image: var(--dark-window-gradient);
+    }
+}
+
+
 .dark .windowframe {
     background-color: var(--dark-window-bg);
     background-image: var(--dark-window-gradient); 
@@ -78,6 +94,9 @@ html {
     border-style: solid;
     border-width: 1px;
     box-shadow: 0px 0px 5px 5px #29282850;
+    transition: background-image var(--transition-time);
+    transition: background-color var(--transition-time);
+    transition: border-color var(--transition-time);
 }
 
 .dot-icon {

@@ -126,7 +126,7 @@ var items = new vis.DataSet([
     {id: 2, start: date_add(1, 50), end: date_add(2, 0), className: 'taken'},
     {id: 3, start: date_add(2, 50), end: date_add(3, 0), className: 'upcoming'},
     {id: 4, start: date_add(3, 50), end: date_add(4, 0), className: 'upcoming'}
-])
+]);
 
 var options = {
     min: date_add(-9, 0),

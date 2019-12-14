@@ -30,7 +30,6 @@
     <link rel="stylesheet" href="./css/extra.css">
     <link rel="stylesheet" href="./css/popup.css">
     
-    
     <link rel="shortcut icon" type="image/png" href="img/icon.png">
 </head>
 
@@ -96,24 +95,25 @@
                         Zur verwendung müssen Sie sich zuerst mit Ihrer E-Mail Adresse einloggen oder registrieren:
                     </p>
                     <div class="spacer"></div>
-                    <div id="login-form" class="control-container">
+                    <form id="login-form" class="control-container" action="javascript:void(0);" target="_self">
                         <input id="usernameText" type="text" class="textbox cell" placeholder="E-Mail Adresse">
-                        <button id="register" class="button control-element" onClick="login()">
+                        <button id="register" type="submit" class="button control-element button-accept" onClick="login()">
                             <p class="label">Anmelden</p>
                         </button>
-                    </div>
+                    </form>
                 </div>
                 
                 <!-- Selection -->
-                <div class="selection-small">
+                <div class="selection-small" id="group-options" style="display: none;">
+                    <p class="label medium">Gruppenoptionen</p>
                     <div class="listCenter">
-                        <div id="group-options" class="buttonList">
-                            <button id="add" class="button disabled" onClick="open_dialog('makeGroupDialog')">
+                        <div class="buttonList">
+                            <button id="add" class="button" onClick="open_dialog('makeGroupDialog')">
                                 <img class="buttonIcon" src="./img/plus.svg">
                                 <p class="label medium ">Erstellen</p>
                             </button>
                             
-                            <button id="join" class="button disabled" onClick="open_dialog('joinGroupDialog')">
+                            <button id="join" class="button" onClick="open_dialog('joinGroupDialog')">
                                 <img class="buttonIcon " src="./img/door.svg">
                                 <p class="label medium">Beitreten</p>
                             </button>
@@ -234,8 +234,8 @@
             
             <p class="label">Teilnehmer</p>
             <select size="6">
-                <option>Rainer Vansinn</option>
-                <option>Gabe Newell</option>
+                <option>rainer.vansinn@example.com</option>
+                <option>gaben@valvesoftware.com</option>
             </select>
             <div class="modify-box">
                 <button id="skip" class="button" onClick="">
@@ -244,7 +244,10 @@
             </div>
             
             <div class="buttonbox">
-                <button id="close-create-dialog" class="button dialog-button" onClick="close_dialog('makeGroupDialog', handle_create)">
+                <button id="close-create-dialog1" class="button dialog-button " onClick="close_dialog('makeGroupDialog', handle_create)">
+                    <p class="label">Abbrechen</p>
+                </button>
+                <button id="close-create-dialog2" class="button dialog-button button-accept" onClick="close_dialog('makeGroupDialog', handle_create)">
                     <p class="label">OK</p>
                 </button>
             </div>
@@ -266,18 +269,14 @@
             
             <div class="spacer-small"></div>
             
-            <p class="label">Beigetretenen Gruppen</p>
-            <select size="6">
-                <option>Gruppe1#3404</option>
-                <option>Gruppe2#8320</option>
-            </select>
-            <div class="modify-box">
-                <button id="skip" class="button" onClick="">
-                    <p class="label">Ausgewählte Gruppe verlassen</p>
-                </button>
-            </div>
+            <p class="label">Beigetretenen Gruppen können in den Einstellungen
+                wieder verlassen werden.
+            </p>
             <div class="buttonbox">
-                <button id="close-join-dialog" class="button dialog-button" onClick="close_dialog('joinGroupDialog', handle_join)">
+                <button id="close-join-dialog1" class="button dialog-button" onClick="close_dialog('joinGroupDialog', handle_join)">
+                    <p class="label">Abbrechen</p>
+                </button>
+                <button id="close-join-dialog2" class="button dialog-button button-accept" onClick="close_dialog('joinGroupDialog', handle_join)">
                     <p class="label">OK</p>
                 </button>
             </div>
@@ -337,7 +336,7 @@
                 <button id="close-service-dialog" class="button dialog-button" onClick="close_dialog('serviceLoginDialog')">
                     <p class="label">Abbrechen</p>
                 </button>
-                <button id="login-service" class="button dialog-button" onClick="close_dialog('serviceLoginDialog')">
+                <button id="login-service" class="button dialog-button button-accept" onClick="close_dialog('serviceLoginDialog')">
                     <p class="label">Anmelden</p>
                 </button>
             </div>

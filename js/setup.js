@@ -53,13 +53,18 @@ function toggle_controls(target, state)
     }
 }
 
+var logged_in = false;
+
 function login()
 {
+    if (logged_in)
+        return;
     var txt = document.getElementById('usernameText').value;
 
     if (validateEmail(txt)) {
         alert('Sie sollten jetzt eine Nachricht in Ihrem Postfach zur bestätigung der Registrierung erhalten haben');
-        toggle_controls('group-options', true);
+        exchange(null, document.getElementById('group-options'));
+        logged_in = true;
     } else {
         alert('Bitte geben Sie einge gültige E-Mail Adresse ein!');
     }
@@ -115,11 +120,14 @@ function handle_buttons()
     switch (cur_page) {
         case pages.INTRO:
         skip.textContent = 'Überspringen';
+        skip.classList.remove('button-accept');
         break;
         case pages.END:
         skip.textContent = 'Fertigstellen';
+        skip.classList.add('button-accept');
         break;
         default:
+        skip.classList.remove('button-accept');
         skip.textContent = 'Weiter';
     }
 }

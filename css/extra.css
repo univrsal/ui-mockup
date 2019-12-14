@@ -119,6 +119,7 @@ label {
     cursor: pointer;
     font-family: "Arial", Times, serif;
     margin-right: 8px;
+    transition: color var(--transition-time);
 }
 
 .bright input[type="radio"]:checked + .rdo {

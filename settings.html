@@ -387,12 +387,14 @@
         
         <!-- button box -->
         <div class="buttonbox">
-            <button id="skip" class="button dialog-button" onClick="">
-                <p class="label">OK</p>
+            <button id="apply" class="button dialog-button button-accept" onClick="">
+                <p class="label">Übernehmen</p>
             </button>
-            
-            <button id="back" class="button dialog-button" onClick="">
-                <p class="label">Speichern</p>
+            <button id="cancel" class="button dialog-button" onClick="">
+                <p class="label">Abbrechen</p>
+            </button>
+            <button id="ok" class="button dialog-button" onClick="">
+                <p class="label">OK</p>
             </button>
         </div>
         
@@ -451,7 +453,7 @@
             </div>
             
             <div class="buttonbox">
-                <button id="close-service-dialog" class="button dialog-button" onClick="close_dialog('serviceLoginDialog')">
+                <button id="close-service-dialog" class="button dialog-button button-accept" onClick="close_dialog('serviceLoginDialog')">
                     <p class="label">OK</p>
                 </button>
                 <button id="login-service" class="button dialog-button" onClick="close_dialog('serviceLoginDialog')">
@@ -497,7 +499,10 @@
             </div>
             
             <div class="buttonbox">
-                <button id="close-create-dialog" class="button dialog-button" onClick="close_dialog('makeGroupDialog', handle_create)">
+                <button id="close-create-dialog1" class="button dialog-button" onClick="close_dialog('makeGroupDialog', handle_create)">
+                    <p class="label">Abbrechen</p>
+                </button>
+                <button id="close-create-dialog2" class="button dialog-button button-accept" onClick="close_dialog('makeGroupDialog', handle_create)">
                     <p class="label">OK</p>
                 </button>
             </div>
@@ -518,7 +523,10 @@
             <input id="joinGroupText" type="text" class="textbox fullInput" placeholder="Gruppenname">
             
             <div class="buttonbox">
-                <button id="close-join-dialog" class="button dialog-button" onClick="close_dialog('joinGroupDialog', handle_join)">
+                <button id="close-join-dialog1" class="button dialog-button" onClick="close_dialog('joinGroupDialog', handle_join)">
+                    <p class="label">Abbrechen</p>
+                </button>
+                <button id="close-join-dialog2" class="button dialog-button button-accept" onClick="close_dialog('joinGroupDialog', handle_join)">
                     <p class="label">OK</p>
                 </button>
             </div>

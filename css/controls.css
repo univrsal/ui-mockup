@@ -28,12 +28,13 @@
 }
 
 .dark {
-    transition: all 0.5s;
+    transition: all var(--transition-time);
 }
 
 .bright {
-    transition: all 0.5s;
+    transition: all var(--transition-time);
 }
+
 p {
     margin: 0px;
 }
@@ -87,10 +88,12 @@ input[type=password] {
 .bright .label,
 .bright .button, .bright option, .bright #visualization div {
     color: var(--bright-text);
+    transition: color var(--transition-time);
 }
 
 .dark .label,
 .dark .button, .dark option, .dark #visualization div {
+    transition: color var(--transition-time);
     color: var(--dark-text);
 }
 
@@ -212,8 +215,8 @@ option {
 .selection-small {
     margin-top: px;
     display: block;
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .selection {
@@ -259,15 +262,16 @@ option {
     cursor: pointer;
     border-style: solid none solid none;
     border-width: 1px;
-    transition: background 0.5s;
 }
 
 .dark .button:hover, .dark .tab-button:hover {
     background: var(--dark-control-hover);
+    transition: background var(--transition-time);
 }
 
 .bright .button:hover, .bright .tab-button:hover {
     background: var(--bright-control-hover);
+    transition: background var(--transition-time);
 }
 
 .buttonbox {
@@ -297,6 +301,23 @@ option {
 .buttonIconSmall {
     width: 64px;
     padding: 10px;
+}
+
+.button-accept {
+    background-image: var(--theme-accept-gradient) !important;
+    transition: background-image var(--transition-time);
+}
+
+.button-accept:hover {
+    background-image: var(--theme-spinbox-gradient-hovered) !important;
+}
+
+.bright .button-accept p {
+    color: var(--dark-text) !important;
+}
+
+.bright .button-accept:hover p {
+    color: var(--dark-text) !important;
 }
 
 .control-element {
@@ -449,6 +470,7 @@ option {
 }
 
 .spinbox {
+    transition:  var(--transition-time);
     padding: 4px 6px 4px 6px;
     border-radius: 5px 0px 0px 5px;
     border-style: solid none none none;
@@ -465,6 +487,7 @@ option {
     float: left;
     margin-top: 5px;
     margin-right: 5px;
+    transition: border-color var(--transition-time);
 }
 
 .dark .spinbox-up {
