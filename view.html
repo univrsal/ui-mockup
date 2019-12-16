@@ -1,0 +1,101 @@
+<!--
+    view.html is part of ui-mockup
+    created on Tuesday, 16th December 2019 09:42:32
+    github.com/univrsal/ui-mockup
+    Copyright 2019 univrsal (universailp@web.de)
+    
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, version 3 of the License.
+    
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+    
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+
+<head>
+    <title>Mockup</title>
+    <link rel="stylesheet" href="./css/vis.min.css">
+    <script src="./js/vis.min.js"></script>
+    <link rel="stylesheet" href="./css/colors.css">
+    <link rel="stylesheet" href="./css/window.css">
+    <link rel="stylesheet" href="./css/controls.css">
+    <link rel="stylesheet" href="./css/view.css">
+    <link rel="stylesheet" href="./css/setup.css">
+    <link rel="stylesheet" href="./css/extra.css">
+    <link rel="stylesheet" href="./css/settings.css">
+    
+    <link rel="shortcut icon" type="image/png" href="img/icon.png">
+</head>
+
+<body class="dark" onmouseup="stop_drag(event)" onmousemove="drag(event)">
+    <div id="bg-image"></div>
+    
+    <div id="main" class="windowframe center view">
+        <!-- Basic title bar -->
+        <div class="titlebar">
+            <div class="windowcontrols noselect">
+                <span class="dot red"></span>
+                <span class="dot orange"></span>
+                <span class="dot green"></span>
+            </div>
+            
+            <p class="label windowtitle centerh">ScreenBreak - Pausenübersicht</p>
+        </div>
+        
+        <!-- Window content -->
+        <div class="page">
+            <p class="label medium">
+                Übersicht
+            </p>
+            
+            <div class="spacer-small"></div>
+            <label for="rdo6">
+                <input type="radio" checked="checked" id="rdo6" name="time">
+                <span class="rdo"></span>
+                <span>Tag</span>
+            </label>
+            <label for="rdo7">
+                <input type="radio" id="rdo7" name="time">
+                <span class="rdo"></span>
+                <span>Woche</span>
+            </label>
+            <label for="rdo8">
+                <input type="radio" id="rdo8" name="time">
+                <span class="rdo"></span>
+                <span>Monat</span>
+            </label>
+
+            <div class="timeline">
+                <div id="visualization"></div>
+                <div class="legend inline">
+                    <span class="missed legend-option"></span> <p class="label">Verpasst</p>
+                    <span class="taken legend-option"></span> <p class="label">Eingehalten</p>
+                    <span class="upcoming legend-option"></span> <p class="label">Geplant</p> 
+                </div>
+            </div>
+        </div>
+        
+        <!-- button box button -->
+        <div class="buttonbox">
+            <button id="skip" class="button dialog-button button-accept" onClick="">
+                <p class="label">OK</p>
+            </button>
+        </div>
+        
+        <!-- Resize Corner -->
+        <div id="resize" onmousedown="start_drag(event)"></div>
+    </div>
+    
+    <script src="./js/view.js"></script>
+</body>
+
+</html>

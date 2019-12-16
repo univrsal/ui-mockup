@@ -605,7 +605,7 @@ div.inline, p.inline { float:left; }
 
 /* List */
 .sortable {
-    height: 90px;
+    height: 140px;
     width: 100%;
     list-style: none;
     padding: 0px;
@@ -634,9 +634,10 @@ div.inline, p.inline { float:left; }
 }
 
 .delete-icon {
+    color: red;
     display: none;
     float: right;
-    margin-top: -15px;
+    margin-top: -16px;
     width: 14px;
     height: 14px;
     cursor: pointer;

@@ -27,6 +27,11 @@ function settings()
     document.location = "./settings.html";
 }
 
+function view()
+{
+    document.location = "./view.html";
+}
+
 function setup()
 {
     var time = new Date();
