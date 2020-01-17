@@ -60,7 +60,7 @@ function handle_time(event)
 {
     var check = /^[0-9]{1,2}:[0-9]{1,2}$/;
     if (!event.target.value.match(check)) {
-        event.target.value = event.target.value.slice(0, -1);
+        event.preventDefault();
     }
 }
 
@@ -110,3 +110,41 @@ new Sortable(document.getElementById('sortable1', {
     ghostClass: 'sortable-ghost'
 }));
 
+/* Time controls */
+
+var days = [ 
+    { 'id' : 0, 'txt': 'Montag'},
+    { 'id' : 1, 'txt': 'Dienstag'},
+    { 'id' : 2, 'txt': 'Mittwoch'},
+    { 'id' : 3, 'txt': 'Donnerstag'},
+    { 'id' : 4, 'txt': 'Freitag'},
+    { 'id' : 5, 'txt': 'Samstag'},
+    { 'id' : 6, 'txt': 'Sonntag'}
+];
+
+function cycle_day(target, dir) {
+    var box = document.getElementById(target);
+    var current = days[0];
+    for (var i = 0; i < days.length; i++) {
+        if (days[i].txt === box.value) {
+            current = days[i];
+            break;
+        }
+    }
+
+    var next = current.id + dir;
+    if (next < 0) {
+        current = days[6];
+    } else if (next > 6) {
+        current = days[0];
+    } else {
+        current = days[next];
+    }
+
+    box.value = current.txt;
+}
+
+var spinbox_off = document.getElementsByClassName('spinbox-noinput');
+for (var i = 0; i < spinbox_off.length; i++) {
+    spinbox_off[i].disabled = true;
+}

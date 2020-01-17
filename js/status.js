@@ -85,7 +85,7 @@ function setup()
     document.getElementById('reminder').textContent = next;
     if (until.length > 0) {
         document.getElementById('countdown').textContent = until;
-        document.getElementById('countdown').style.color = 'white';
+        document.getElementById('countdown').style.color = 'rgb(29, 29, 29)';
     } else {
         document.getElementById('countdown').style.color = 'transparent';
     }

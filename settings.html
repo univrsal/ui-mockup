@@ -120,7 +120,7 @@
             
             <!-- time controls -->
             <div class="spacer"></div>
-            <p class="label medium">Zeiteinschränkungen</p>
+            <p class="label medium">Zeitbeschränkungen</p>
             <div class="spacer-small"></div>
             
             <label for="cbk3">
@@ -153,7 +153,7 @@
                 
                 <p class="label spin-label inline">bis</p>
                 <div class="time-input inline disabled">
-                    <input type="text" id="time2" class="spinbox" value="00:00" oninput="handle_time(event)">
+                    <input type="text" id="time2" class="spinbox" value="00:00" onkeydown="handle_time(event)">
                     <div class="spinbox-buttons" style="float: left;">
                         <button class="spinbox-up">
                             <svg width="20px" height="12px" viewBox="0 0 12 20">
@@ -186,14 +186,14 @@
             <div id="time-weekday" class="horizontal-options">
                 <p class="label spin-label">Von</p>
                 <div class="time-input inline disabled">
-                    <input type="text" id="weekday" class="spinbox" value="Samstag" oninput="">
+                    <input type="text" id="weekday" class="spinbox spinbox-noinput" value="Samstag" oninput="">
                     <div class="spinbox-buttons" style="float: left;">
-                        <button class="spinbox-up">
+                        <button class="spinbox-up" onclick="cycle_day('weekday', -1)">
                             <svg width="20px" height="12px" viewBox="0 0 12 20">
                                 <polyline points="2.47 8.506 10 0.918 17.530 8.506"></polyline>
                             </svg>
                         </button>
-                        <button class="spinbox-down">
+                        <button class="spinbox-down" onclick="cycle_day('weekday', 1)">
                             <svg width="20px" height="12px" viewBox="0 0 12 20">
                                 <polyline points="2.47 0.728 10 8.316 17.530 0.728"></polyline>
                             </svg>
@@ -203,14 +203,14 @@
                 
                 <p class="label spin-label inline">bis</p>
                 <div class="time-input inline disabled">
-                    <input type="text" id="weekday2" class="spinbox" value="Sonntag" oninput="">
+                    <input type="text" id="weekday2" class="spinbox spinbox-noinput" value="Sonntag" oninput="">
                     <div class="spinbox-buttons" style="float: left;">
-                        <button class="spinbox-up">
+                        <button class="spinbox-up" onclick="cycle_day('weekday2', -1)">
                             <svg width="20px" height="12px" viewBox="0 0 12 20">
                                 <polyline points="2.47 8.506 10 0.918 17.530 8.506"></polyline>
                             </svg>
                         </button>
-                        <button class="spinbox-down">
+                        <button class="spinbox-down" onclick="cycle_day('weekday2', 1)">
                             <svg width="20px" height="12px" viewBox="0 0 12 20">
                                 <polyline points="2.47 0.728 10 8.316 17.530 0.728"></polyline>
                             </svg>

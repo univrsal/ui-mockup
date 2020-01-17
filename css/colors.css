@@ -75,7 +75,7 @@
 
     /* Bright */
     --bright-window-bg: #e4e4e4;
-    --bright-window-border: #e6e6e688 #d3d3d388 #51515588 #6c6d7188;
+    --bright-window-border: #6c6d7188;
     --bright-window-gradient: repeating-linear-gradient(#efefef, #e4e4e4 4%, #e4e4e4 100%);
     --bright-text: rgb(29, 29, 29);
     --bright-shadow: drop-shadow(0px 0px 5px #aaaaaabb);
