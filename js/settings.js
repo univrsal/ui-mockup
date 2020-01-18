@@ -58,6 +58,7 @@ function toggle_options(event, target)
 
 function handle_time(event)
 {
+    return;
     var check = /^[0-9]{1,2}:[0-9]{1,2}$/;
     if (!event.target.value.match(check)) {
         event.preventDefault();
