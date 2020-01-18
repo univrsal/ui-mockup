@@ -31,8 +31,7 @@ html {
 }
 
 .bright #bg-image {
-    /* background-image: url("../img/day.jpg"); */
-    background-color: white;
+    background-image: url("../img/day.jpg");
     transition: background-image var(--transition-time);
 }
 
